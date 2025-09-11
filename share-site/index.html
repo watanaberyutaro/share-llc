@@ -58,6 +58,7 @@ body {
   background: var(--color-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  font-weight: 500;
 }
 
 /* ===== プリローダー ===== */
@@ -114,6 +115,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
 
 .logo {
@@ -141,6 +144,7 @@ nav a {
   letter-spacing: 0.5px;
   transition: var(--transition-base);
   position: relative;
+  font-weight: 500;
 }
 
 nav a::after {
@@ -192,12 +196,51 @@ nav a.active::after {
   justify-content: center;
   position: relative;
   padding: var(--spacing-3xl) var(--spacing-lg);
-  margin-top: 80px;
+  margin-top: 0;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.dark-section {
-  background: linear-gradient(135deg, #263238 0%, #37474F 100%);
-  color: #FFFFFF;
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  z-index: -1;
+}
+
+.white-section {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.white-section .section-label,
+.white-section .section-description,
+.white-section .hero-subtitle,
+.white-section .hero-description {
+  color: #666666;
+}
+
+.white-section .section-title,
+.white-section .hero-title {
+  color: #000000;
 }
 
 .dark-section .section-label,
@@ -217,20 +260,37 @@ nav a.active::after {
   color: #FFFFFF;
 }
 
-.hero-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: center;
+/* 私たちの強みセクション専用のスタイル */
+.achievements-section.dark-section .section-label,
+.achievements-section.dark-section .section-description,
+.achievements-section.dark-section .section-title,
+.achievements-section.dark-section .achievement-title,
+.achievements-section.dark-section .achievement-description {
+  color: #333333 !important;
 }
 
+
 .hero-title {
-  font-size: clamp(36px, 8vw, 96px);
-  font-weight: 100;
-  line-height: 1.2;
-  letter-spacing: -2px;
+  font-size: clamp(48px, 10vw, 128px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -3px;
   margin-bottom: var(--spacing-lg);
   overflow: hidden;
+  position: relative;
+  z-index: 3;
+  color: #263238;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 4px 8px rgba(249, 168, 37, 0.2));
 }
+
+.hero-title .highlight {
+  color: #F9A825;
+  background: none;
+  transform: scale(1.05);
+  display: inline-block;
+}
+
 
 .hero-title .word {
   display: inline-block;
@@ -250,6 +310,9 @@ nav a.active::after {
   opacity: 0;
   transform: translateY(20px);
   line-height: 1.8;
+  position: relative;
+  z-index: 3;
+  font-weight: 600;
 }
 
 .hero-description {
@@ -260,8 +323,10 @@ nav a.active::after {
   transform: translateY(20px);
   line-height: 1.8;
   max-width: 800px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-cta {
@@ -269,6 +334,8 @@ nav a.active::after {
   gap: var(--spacing-md);
   opacity: 0;
   transform: translateY(20px);
+  position: relative;
+  z-index: 3;
 }
 
 .btn {
@@ -322,6 +389,7 @@ nav a.active::after {
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
+  z-index: 3;
 }
 
 .scroll-indicator span {
@@ -349,6 +417,7 @@ nav a.active::after {
   100% { transform: translateY(60px); }
 }
 
+
 /* ===== マウストレイル ===== */
 .trail-container {
   position: fixed;
@@ -357,17 +426,17 @@ nav a.active::after {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 50;
+  z-index: 2;
 }
 
 .trail-image {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
   pointer-events: none;
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
 }
 
 .trail-image svg {
@@ -375,16 +444,133 @@ nav a.active::after {
   height: 100%;
 }
 
+/* ===== パートナー企業スライダー ===== */
+.partners-slider-section {
+  padding: var(--spacing-2xl) 0;
+  background: var(--color-secondary);
+  overflow: hidden;
+}
+
+.partners-slider {
+  width: 100%;
+}
+
+.partners-track {
+  display: flex;
+  animation: slidePartners 30s linear infinite;
+  width: calc(150px * 16 + 48px * 16); /* 16個のロゴ分の幅 */
+}
+
+.partner-logo {
+  flex: 0 0 150px;
+  height: 80px;
+  margin-right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes slidePartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-150px * 8 - 48px * 8)); /* 8個分移動してループ */
+  }
+}
+
+/* ===== 数値実績スライダー ===== */
+.stats-slider-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  overflow: hidden;
+  color: white;
+}
+
+.stats-slider {
+  width: 100%;
+}
+
+.stats-track {
+  display: flex;
+  animation: slideStats 25s linear infinite;
+  width: calc(200px * 12 + 32px * 12); /* 12個の統計分の幅 */
+}
+
+.stat-slide {
+  flex: 0 0 200px;
+  text-align: center;
+  margin-right: 32px;
+  padding: var(--spacing-lg);
+}
+
+.stat-slide .stat-number {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  margin-bottom: var(--spacing-xs);
+  color: white;
+}
+
+.stat-slide .stat-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+@keyframes slideStats {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 6 - 32px * 6)); /* 6個分移動してループ */
+  }
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  z-index: 3;
+  padding: 0 var(--spacing-lg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* ===== セクション共通 ===== */
 .section {
   padding: var(--spacing-4xl) 0;
   position: relative;
+  z-index: 1;
 }
 
 .section-container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+  position: relative;
+  z-index: 3;
 }
 
 .section-header {
@@ -402,7 +588,7 @@ nav a.active::after {
 
 .section-title {
   font-size: clamp(32px, 5vw, 64px);
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -2px;
   line-height: 1.1;
   overflow: hidden;
@@ -444,7 +630,7 @@ nav a.active::after {
 
 .about-title {
   font-size: clamp(24px, 3vw, 36px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.4;
   margin-bottom: var(--spacing-lg);
   letter-spacing: -1px;
@@ -546,7 +732,7 @@ nav a.active::after {
 .service-title {
   font-size: 24px;
   margin-bottom: var(--spacing-sm);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .service-description {
@@ -619,6 +805,7 @@ nav a.active::after {
 .achievement-title {
   font-size: 20px;
   margin-bottom: var(--spacing-sm);
+  font-weight: 600;
 }
 
 .achievement-description {
@@ -679,7 +866,7 @@ nav a.active::after {
   color: var(--color-text);
   font-size: 18px;
   margin-bottom: var(--spacing-xs);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .news-excerpt {
@@ -701,7 +888,6 @@ nav a.active::after {
 /* ===== CTAセクション ===== */
 .cta-section {
   background: linear-gradient(135deg, #FFE0B2, #FFCC80);
-  text-align: center;
   padding: var(--spacing-4xl) 0;
   color: #263238;
 }
@@ -714,7 +900,7 @@ nav a.active::after {
 .cta-title {
   font-size: clamp(28px, 4vw, 48px);
   margin-bottom: var(--spacing-md);
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: -1px;
 }
 
@@ -750,12 +936,16 @@ footer {
   border-top: 1px solid var(--color-border);
   background: #263238;
   color: #FFFFFF;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+  position: relative;
+  z-index: 3;
 }
 
 .footer-content {
@@ -857,6 +1047,11 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+  
+  .cta-content > div {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
 }
 
 /* ===== モバイルメニュー ===== */
@@ -927,6 +1122,7 @@ footer {
   </div>
 </div>
 
+
 <!-- マウストレイル -->
 <div class="trail-container"></div>
 
@@ -965,24 +1161,27 @@ footer {
 </div>
 
 <!-- ヒーローセクション -->
-<section class="hero dark-section">
+<section class="hero white-section">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
   <div class="hero-content">
-    <h1 class="hero-title" data-splitting>幸せ、楽しさ、新たな価値を<br>世界にSHAREする</h1>
+    <h1 class="hero-title" data-splitting>幸せ、楽しさ、<br>新たな価値を<br>世界に<span class="highlight">SHARE</span>する</h1>
     <p class="hero-subtitle">最高の仲間と最高の価値を提供する</p>
     <p class="hero-description">
       合同会社SHAREは、2017年の創業以来、お客様のビジネスパートナーとして、<br>
       IT、通信、セールスプロモーション、アウトソーシングの各分野で、<br>
       革新的なソリューションを提供し続けています。
     </p>
-    <div class="hero-cta">
-      <a href="about.html" class="btn btn-primary">私たちについて</a>
-      <a href="contact.html" class="btn">お問い合わせ</a>
-    </div>
   </div>
   <div class="scroll-indicator">
     <span></span>
   </div>
 </section>
+
 
 <!-- 私たちについて -->
 <section class="section about-section">
@@ -1009,7 +1208,9 @@ footer {
         </p>
         <a href="about.html" class="btn">詳しく見る</a>
       </div>
-      <div class="about-image js-fade"></div>
+      <div class="about-image js-fade">
+        <img src="https://picsum.photos/500/400?random=20" alt="オフィス風景" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+      </div>
     </div>
     <div class="about-stats">
       <div class="stat-item js-fade">
@@ -1100,6 +1301,63 @@ footer {
   </div>
 </section>
 
+<!-- 数値・実績スライダー -->
+<section class="stats-slider-section">
+  <div class="stats-slider">
+    <div class="stats-track">
+      <div class="stat-slide">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">取引実績</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">従業員数</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">7年</div>
+        <div class="stat-label">創業年数</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">顧客満足度</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">24時間</div>
+        <div class="stat-label">サポート体制</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">4つ</div>
+        <div class="stat-label">事業領域</div>
+      </div>
+      <!-- 同じセットを複製 -->
+      <div class="stat-slide">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">取引実績</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">従業員数</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">7年</div>
+        <div class="stat-label">創業年数</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">顧客満足度</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">24時間</div>
+        <div class="stat-label">サポート体制</div>
+      </div>
+      <div class="stat-slide">
+        <div class="stat-number">4つ</div>
+        <div class="stat-label">事業領域</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 実績セクション -->
 <section class="section achievements-section dark-section">
   <div class="section-container">
@@ -1171,48 +1429,11 @@ footer {
       <div class="section-label js-fade">News & Topics</div>
       <h2 class="section-title js-text-fade" data-splitting>お知らせ</h2>
     </div>
-    <div class="news-list">
-      <div class="news-item js-fade">
-        <div class="news-date">2024.01.15</div>
-        <div class="news-content">
-          <span class="news-category">お知らせ</span>
-          <h3 class="news-title">新年のご挨拶と今年の事業方針について</h3>
-          <p class="news-excerpt">
-            明けましておめでとうございます。本年も合同会社SHAREをよろしくお願いいたします。2024年は更なる事業拡大を目指し、新たなサービスの展開を予定しております。
-          </p>
-        </div>
-      </div>
-      <div class="news-item js-fade">
-        <div class="news-date">2023.12.20</div>
-        <div class="news-content">
-          <span class="news-category">採用</span>
-          <h3 class="news-title">2024年度 新卒・中途採用を開始しました</h3>
-          <p class="news-excerpt">
-            事業拡大に伴い、新卒・中途採用を積極的に行っております。エンジニア、営業、事務など幅広い職種で募集中です。詳細は採用ページをご覧ください。
-          </p>
-        </div>
-      </div>
-      <div class="news-item js-fade">
-        <div class="news-date">2023.11.01</div>
-        <div class="news-content">
-          <span class="news-category">事業</span>
-          <h3 class="news-title">SES事業部が新たに3社との契約を締結</h3>
-          <p class="news-excerpt">
-            この度、SES事業部において新たに3社との業務委託契約を締結いたしました。より多くのお客様に価値を提供できるよう、引き続き努めてまいります。
-          </p>
-        </div>
-      </div>
-      <div class="news-item js-fade">
-        <div class="news-date">2021.12.01</div>
-        <div class="news-content">
-          <span class="news-category">お知らせ</span>
-          <span class="news-badge">NEW</span>
-          <h3 class="news-title">ホームページをリニューアルしました</h3>
-          <p class="news-excerpt">
-            この度、当社ホームページを全面リニューアルいたしました。より見やすく、使いやすいサイトを目指して、デザインと機能を一新しております。
-          </p>
-        </div>
-      </div>
+    <div class="news-list" id="homeNewsList">
+      <!-- ニュース項目が動的に読み込まれます -->
+    </div>
+    <div style="text-align: center; margin-top: var(--spacing-xl);">
+      <a href="news.html" class="btn btn-primary">すべてのお知らせを見る</a>
     </div>
   </div>
 </section>
@@ -1221,14 +1442,21 @@ footer {
 <section class="section cta-section">
   <div class="section-container">
     <div class="cta-content js-fade">
-      <h2 class="cta-title">共に、新しい価値を創造しませんか？</h2>
-      <p class="cta-description">
-        ビジネスの課題解決から新規事業の立ち上げまで、<br>
-        あらゆるニーズにお応えします。まずはお気軽にご相談ください。
-      </p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn">お問い合わせ</a>
-        <a href="recruit.html" class="btn">採用情報を見る</a>
+      <div style="display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center;">
+        <div>
+          <h2 class="cta-title">共に、新しい価値を創造しませんか？</h2>
+          <p class="cta-description">
+            ビジネスの課題解決から新規事業の立ち上げまで、<br>
+            あらゆるニーズにお応えします。まずはお気軽にご相談ください。
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn">お問い合わせ</a>
+            <a href="recruit.html" class="btn">採用情報を見る</a>
+          </div>
+        </div>
+        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+          <img src="https://picsum.photos/300/200?random=20" alt="チームワーク" style="width: 100%; height: 200px; object-fit: cover;">
+        </div>
       </div>
     </div>
   </div>
@@ -1516,24 +1744,68 @@ const trailImageCount = 10;
 let mouseX = 0;
 let mouseY = 0;
 
+// 背景に適した色の配列（濃い透明度）
+const colors = [
+  'rgba(255, 107, 107, 0.7)', // 赤
+  'rgba(78, 205, 196, 0.7)',  // 青緑
+  'rgba(69, 183, 209, 0.7)',  // 青
+  'rgba(150, 206, 180, 0.7)', // 緑
+  'rgba(254, 202, 87, 0.7)',  // 黄
+  'rgba(255, 159, 243, 0.7)', // ピンク
+  'rgba(84, 160, 255, 0.7)',  // 青
+  'rgba(95, 39, 205, 0.7)',   // 紫
+  'rgba(0, 210, 211, 0.7)',   // 青緑
+  'rgba(255, 159, 67, 0.7)',  // オレンジ
+  'rgba(196, 69, 105, 0.7)',  // ピンク
+  'rgba(248, 181, 0, 0.7)'    // 黄色
+];
+
+// ランダムな図形タイプ（不規則な形状）
+const shapes = ['blob1', 'blob2', 'blob3', 'blob4', 'blob5', 'organic1', 'organic2'];
+
 // トレイル画像の作成
 for (let i = 0; i < trailImageCount; i++) {
   const img = document.createElement('div');
   img.className = 'trail-image';
-  img.innerHTML = `
-    <svg viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="40" stroke="${i % 2 === 0 ? '#F9A825' : '#1565C0'}" stroke-width="0.5" opacity="0.5"/>
-      <circle cx="50" cy="50" r="30" stroke="${i % 2 === 0 ? '#1565C0' : '#F9A825'}" stroke-width="0.5" opacity="0.3"/>
-      <circle cx="50" cy="50" r="20" stroke="${i % 2 === 0 ? '#F9A825' : '#1565C0'}" stroke-width="0.5" opacity="0.2"/>
-    </svg>
-  `;
+  
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+  
+  let shapeHTML = '';
+  
+  switch(randomShape) {
+    case 'blob1':
+      shapeHTML = `<path d="M20,50 C15,25 35,10 55,20 C75,15 85,35 70,55 C80,75 60,85 40,75 C20,80 10,60 20,50 Z" fill="${randomColor}"/>`;
+      break;
+    case 'blob2':
+      shapeHTML = `<path d="M30,20 C55,15 75,25 80,50 C85,70 70,85 50,80 C25,85 10,65 15,45 C12,25 25,15 30,20 Z" fill="${randomColor}"/>`;
+      break;
+    case 'blob3':
+      shapeHTML = `<path d="M25,30 C45,10 65,25 75,45 C85,65 75,80 55,85 C35,90 15,75 10,55 C5,35 15,20 25,30 Z" fill="${randomColor}"/>`;
+      break;
+    case 'blob4':
+      shapeHTML = `<path d="M35,15 C60,20 80,35 75,60 C80,80 60,90 40,85 C20,90 5,70 10,50 C5,30 20,10 35,15 Z" fill="${randomColor}"/>`;
+      break;
+    case 'blob5':
+      shapeHTML = `<path d="M40,10 C65,5 85,25 90,50 C85,75 65,90 40,85 C15,90 5,70 10,45 C5,20 25,5 40,10 Z" fill="${randomColor}"/>`;
+      break;
+    case 'organic1':
+      shapeHTML = `<path d="M50,10 C70,15 80,30 85,50 C80,70 65,85 45,80 C25,85 10,70 15,50 C10,30 30,5 50,10 Z" fill="${randomColor}"/>`;
+      break;
+    case 'organic2':
+      shapeHTML = `<path d="M30,25 C50,15 70,30 75,50 C70,70 55,85 35,80 C15,75 5,55 10,35 C15,25 25,20 30,25 Z" fill="${randomColor}"/>`;
+      break;
+  }
+  
+  img.innerHTML = `<svg viewBox="0 0 100 100">${shapeHTML}</svg>`;
   trailContainer.appendChild(img);
   trailImages.push(img);
 }
 
 let currentImageIndex = 0;
 let lastMouseMove = 0;
-const mouseThreshold = 30;
+const mouseThreshold = 80; // 距離のしきい値をさらに増加
+const timeThreshold = 300; // 時間のしきい値をさらに増加（もっと遅く）
 let lastX = 0;
 let lastY = 0;
 
@@ -1541,10 +1813,52 @@ document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
   
+  // HEROセクション内でのみエフェクトを適用
+  const heroSection = document.querySelector('.hero');
+  const heroRect = heroSection.getBoundingClientRect();
+  const isInHero = mouseX >= heroRect.left && 
+                   mouseX <= heroRect.right && 
+                   mouseY >= heroRect.top && 
+                   mouseY <= heroRect.bottom;
+  
+  if (!isInHero) return;
+  
   const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
   
-  if (distance > mouseThreshold && Date.now() - lastMouseMove > 50) {
+  if (distance > mouseThreshold && Date.now() - lastMouseMove > timeThreshold) {
     const img = trailImages[currentImageIndex];
+    
+    // ランダムに新しい図形と色を選択
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+    
+    let shapeHTML = '';
+    
+    switch(randomShape) {
+      case 'blob1':
+        shapeHTML = `<path d="M20,50 C15,25 35,10 55,20 C75,15 85,35 70,55 C80,75 60,85 40,75 C20,80 10,60 20,50 Z" fill="${randomColor}"/>`;
+        break;
+      case 'blob2':
+        shapeHTML = `<path d="M30,20 C55,15 75,25 80,50 C85,70 70,85 50,80 C25,85 10,65 15,45 C12,25 25,15 30,20 Z" fill="${randomColor}"/>`;
+        break;
+      case 'blob3':
+        shapeHTML = `<path d="M25,30 C45,10 65,25 75,45 C85,65 75,80 55,85 C35,90 15,75 10,55 C5,35 15,20 25,30 Z" fill="${randomColor}"/>`;
+        break;
+      case 'blob4':
+        shapeHTML = `<path d="M35,15 C60,20 80,35 75,60 C80,80 60,90 40,85 C20,90 5,70 10,50 C5,30 20,10 35,15 Z" fill="${randomColor}"/>`;
+        break;
+      case 'blob5':
+        shapeHTML = `<path d="M40,10 C65,5 85,25 90,50 C85,75 65,90 40,85 C15,90 5,70 10,45 C5,20 25,5 40,10 Z" fill="${randomColor}"/>`;
+        break;
+      case 'organic1':
+        shapeHTML = `<path d="M50,10 C70,15 80,30 85,50 C80,70 65,85 45,80 C25,85 10,70 15,50 C10,30 30,5 50,10 Z" fill="${randomColor}"/>`;
+        break;
+      case 'organic2':
+        shapeHTML = `<path d="M30,25 C50,15 70,30 75,50 C70,70 55,85 35,80 C15,75 5,55 10,35 C15,25 25,20 30,25 Z" fill="${randomColor}"/>`;
+        break;
+    }
+    
+    img.innerHTML = `<svg viewBox="0 0 100 100">${shapeHTML}</svg>`;
     
     gsap.set(img, {
       x: mouseX,
@@ -1555,16 +1869,16 @@ document.addEventListener('mousemove', (e) => {
     
     gsap.to(img, {
       scale: 1,
-      opacity: 0.3,
-      duration: 0.4,
+      opacity: 0.8,
+      duration: 0.6,
       ease: 'power2.out'
     });
     
     gsap.to(img, {
-      scale: 1.5,
+      scale: 1.2,
       opacity: 0,
-      duration: 1,
-      delay: 0.2,
+      duration: 1.5,
+      delay: 0.5,
       ease: 'power2.in'
     });
     
@@ -1630,6 +1944,102 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
       duration: 0.3
     });
   });
+});
+
+// ===== ホームページニュース読み込み =====
+function loadHomeNews() {
+  const homeNewsList = document.getElementById('homeNewsList');
+  
+  // ニュースデータを取得（news.jsと同じ初期化処理）
+  let newsList = JSON.parse(localStorage.getItem('newsList') || '[]');
+  
+  // サンプルデータが存在しない場合は初期化
+  if (newsList.length === 0) {
+    const sampleNews = [
+      {
+        id: 1,
+        title: '新サービス「SHARE Connect」をリリースしました',
+        category: 'service',
+        excerpt: '企業と人材をつなぐ新しいマッチングプラットフォーム「SHARE Connect」の提供を開始しました。AIを活用した最適なマッチングを実現します。',
+        date: '2024-03-15'
+      },
+      {
+        id: 2,
+        title: '東京オフィス移転のお知らせ',
+        category: 'company',
+        excerpt: '業務拡大に伴い、東京オフィスを渋谷スクランブルスクエアに移転いたしました。',
+        date: '2024-03-01'
+      },
+      {
+        id: 3,
+        title: '「働き方改革EXPO 2024」に出展します',
+        category: 'event',
+        excerpt: '2024年4月10日〜12日に東京ビッグサイトで開催される「働き方改革EXPO 2024」に出展いたします。',
+        date: '2024-02-20'
+      },
+      {
+        id: 4,
+        title: '年末年始休業のお知らせ',
+        category: 'company',
+        excerpt: '誠に勝手ながら、下記の期間を年末年始休業とさせていただきます。',
+        date: '2023-12-20'
+      },
+      {
+        id: 5,
+        title: 'SES事業部が新たに3社との契約を締結',
+        category: 'service',
+        excerpt: 'この度、SES事業部において新たに3社との業務委託契約を締結いたしました。',
+        date: '2023-11-01'
+      }
+    ];
+    
+    newsList = sampleNews;
+    localStorage.setItem('newsList', JSON.stringify(sampleNews));
+  }
+  
+  // 日付でソート（新着順）
+  newsList.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  // 最新4件のみ表示
+  const latestNews = newsList.slice(0, 4);
+  
+  // カテゴリーラベル変換
+  const getCategoryLabel = (category) => {
+    const labels = {
+      'service': 'サービス',
+      'company': '会社情報', 
+      'event': 'イベント',
+      'press': 'プレスリリース'
+    };
+    return labels[category] || 'お知らせ';
+  };
+  
+  // 日付フォーマット
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}.${month}.${day}`;
+  };
+  
+  // HTML生成
+  homeNewsList.innerHTML = latestNews.map((news, index) => `
+    <div class="news-item js-fade" onclick="window.location.href='news.html'">
+      <div class="news-date">${formatDate(news.date)}</div>
+      <div class="news-content">
+        <span class="news-category">${getCategoryLabel(news.category)}</span>
+        ${index === 0 ? '<span class="news-badge">NEW</span>' : ''}
+        <h3 class="news-title">${news.title}</h3>
+        <p class="news-excerpt">${news.excerpt}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ページ読み込み時にニュースを読み込む
+document.addEventListener('DOMContentLoaded', () => {
+  loadHomeNews();
 });
 
 // ===== パララックス効果 =====
