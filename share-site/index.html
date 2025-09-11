@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社SHARE | 幸せ、楽しさ、新たな価値を世界にSHAREする</title>
+<meta name="description" content="合同会社SHAREは、SV事業、SES事業、セールスプロモーション事業、アウトソーシング事業を通じて、人・企業・世界に最高の価値を提供します。私たちは、お客様のビジネスパートナーとして、共に成長し、新たな価値を創造し続けます。">
+<link rel="stylesheet" href="assets/css/common.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<style>
+/* ===== デザイントークン ===== */
+:root {
+  --color-primary: #FFFFFF;
+  --color-secondary: #F5F5F5;
+  --color-text: #263238;
+  --color-text-muted: #666666;
+  --color-accent: #F9A825;
+  --color-accent-light: #FFB300;
+  --color-accent-blue: #1565C0;
+  --color-accent-blue-light: #1976D2;
+  --color-border: rgba(38, 50, 56, 0.1);
+  
+  --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
+  --spacing-4xl: 128px;
+  
+  --transition-base: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  --max-width: 1400px;
+}
+
+/* ===== リセット ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== プリローダー ===== */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+.preloader-percentage {
+  font-size: 72px;
+  font-weight: 100;
+  letter-spacing: -2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.preloader-text {
+  margin-top: var(--spacing-sm);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--spacing-lg) 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-xl);
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 1px;
+  background: var(--color-text);
+  transition: var(--transition-base);
+}
+
+.menu-toggle span:nth-child(1) { top: 10px; }
+.menu-toggle span:nth-child(2) { top: 50%; transform: translate(-50%, -50%); }
+.menu-toggle span:nth-child(3) { bottom: 10px; }
+
+/* ===== ヒーローセクション ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  margin-top: 80px;
+}
+
+.dark-section {
+  background: linear-gradient(135deg, #263238 0%, #37474F 100%);
+  color: #FFFFFF;
+}
+
+.dark-section .section-label,
+.dark-section .section-description,
+.dark-section .hero-subtitle,
+.dark-section .hero-description,
+.dark-section .about-paragraph,
+.dark-section .stat-label,
+.dark-section .news-excerpt {
+  color: #999999;
+}
+
+.dark-section .section-title,
+.dark-section .hero-title,
+.dark-section .about-title,
+.dark-section .news-title {
+  color: #FFFFFF;
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 100;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.hero-title .word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-title .char {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(20px);
+  line-height: 1.8;
+}
+
+.hero-description {
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xl);
+  opacity: 0;
+  transform: translateY(20px);
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: inline-flex;
+  gap: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-text);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: var(--color-primary);
+}
+
+.btn:hover::before {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-primary::before {
+  background: var(--color-accent-light);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: var(--color-text-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: var(--color-text);
+  animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(60px); }
+}
+
+/* ===== マウストレイル ===== */
+.trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.trail-image {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.trail-image svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== セクション共通 ===== */
+.section {
+  padding: var(--spacing-4xl) 0;
+  position: relative;
+}
+
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section-header {
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 200;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title .char {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.section-description {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-md);
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== 私たちについて ===== */
+.about-section {
+  background: var(--color-secondary);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  margin-top: var(--spacing-3xl);
+}
+
+.about-text {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.about-title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: -1px;
+}
+
+.about-paragraph {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-image {
+  opacity: 0;
+  transform: translateX(30px);
+  position: relative;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.stat-item {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stat-number {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 100;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}
+
+/* ===== サービスセクション ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.service-card {
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-base);
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+}
+
+.service-card:hover::before {
+  opacity: 0.1;
+}
+
+.service-number {
+  font-size: 48px;
+  font-weight: 100;
+  color: var(--color-accent);
+  opacity: 0.5;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-title {
+  font-size: 24px;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.service-description {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-features {
+  list-style: none;
+  margin-top: var(--spacing-md);
+}
+
+.service-features li {
+  padding: var(--spacing-xs) 0;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  position: relative;
+  padding-left: var(--spacing-md);
+}
+
+.service-features li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* ===== 実績セクション ===== */
+.achievements-section {
+  background: var(--color-secondary);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-3xl);
+}
+
+.achievement-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: var(--transition-base);
+}
+
+.dark-section .achievement-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.achievement-card:hover {
+  transform: scale(1.05);
+  border-color: var(--color-accent);
+}
+
+.achievement-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-md);
+  color: var(--color-accent);
+}
+
+.achievement-title {
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.achievement-description {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== ニュースセクション ===== */
+.news-list {
+  margin-top: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-item {
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.news-item:hover {
+  padding-left: var(--spacing-md);
+}
+
+.news-date {
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 100px;
+  padding-top: 4px;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-category {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  padding: 2px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+}
+
+.news-title {
+  color: var(--color-text);
+  font-size: 18px;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.news-excerpt {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.news-badge {
+  background: #FF4444;
+  color: var(--color-text);
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-left: var(--spacing-sm);
+}
+
+/* ===== CTAセクション ===== */
+.cta-section {
+  background: linear-gradient(135deg, #FFE0B2, #FFCC80);
+  text-align: center;
+  padding: var(--spacing-4xl) 0;
+  color: #263238;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: var(--spacing-md);
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.cta-description {
+  font-size: clamp(16px, 2vw, 20px);
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  background: #263238;
+  border-color: #263238;
+  color: #FFFFFF;
+}
+
+.cta-buttons .btn:hover {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+/* ===== フッター ===== */
+footer {
+  padding: var(--spacing-3xl) 0 var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+  background: #263238;
+  color: #FFFFFF;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-column h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-column a {
+  color: #999999;
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition-base);
+}
+
+.footer-column a:hover {
+  color: var(--color-accent);
+  padding-left: var(--spacing-xs);
+}
+
+.footer-column p {
+  color: #999999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-company {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-company span {
+  color: var(--color-accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #999999;
+  font-size: 12px;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .hero-title {
+    font-size: clamp(28px, 10vw, 56px);
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== モバイルメニュー ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #263238;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(0% at top right);
+  transition: clip-path 0.5s ease;
+}
+
+.mobile-menu.active {
+  clip-path: circle(150% at top right);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-menu li {
+  margin: var(--spacing-lg) 0;
+}
+
+.mobile-menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: -1px;
+  transition: var(--transition-base);
+}
+
+.mobile-menu a:hover {
+  color: var(--color-accent);
+}
+
+/* ===== ユーティリティ ===== */
+.js-fade {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-text-fade .char {
+  transform: translateY(100%);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- プリローダー -->
+<div class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-percentage">0%</div>
+    <div class="preloader-text">Loading SHARE</div>
+  </div>
+</div>
+
+<!-- マウストレイル -->
+<div class="trail-container"></div>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="SHARE" style="height: 40px; width: auto;"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="works.html">実績</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu">
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="services.html">サービス</a></li>
+    <li><a href="works.html">実績</a></li>
+    <li><a href="news.html">お知らせ</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+  </ul>
+</div>
+
+<!-- ヒーローセクション -->
+<section class="hero dark-section">
+  <div class="hero-content">
+    <h1 class="hero-title" data-splitting>幸せ、楽しさ、新たな価値を<br>世界にSHAREする</h1>
+    <p class="hero-subtitle">最高の仲間と最高の価値を提供する</p>
+    <p class="hero-description">
+      合同会社SHAREは、2017年の創業以来、お客様のビジネスパートナーとして、<br>
+      IT、通信、セールスプロモーション、アウトソーシングの各分野で、<br>
+      革新的なソリューションを提供し続けています。
+    </p>
+    <div class="hero-cta">
+      <a href="about.html" class="btn btn-primary">私たちについて</a>
+      <a href="contact.html" class="btn">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span></span>
+  </div>
+</section>
+
+<!-- 私たちについて -->
+<section class="section about-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label js-fade">About Us</div>
+      <h2 class="section-title js-text-fade" data-splitting>私たちについて</h2>
+      <p class="section-description js-fade">
+        人と企業、そして世界をつなぐ架け橋として、<br>
+        新しい価値を創造し、共に成長する
+      </p>
+    </div>
+    <div class="about-content">
+      <div class="about-text js-fade">
+        <h3 class="about-title">
+          最高の仕事で、<br>
+          人、企業、世界にSHAREする
+        </h3>
+        <p class="about-paragraph">
+          私たち合同会社SHAREは、「幸せ、楽しさ、新たな価値」を世界に共有することを使命として、日々挑戦を続けています。創業から培ってきた経験とノウハウを活かし、お客様の課題解決と成長を全力でサポートいたします。
+        </p>
+        <p class="about-paragraph">
+          SV事業、SES事業、セールスプロモーション事業、アウトソーシング事業の4つの柱を中心に、多角的なアプローチでお客様のビジネスを支援。常に最新の技術とトレンドを取り入れながら、確かな実績と信頼を積み重ねています。
+        </p>
+        <a href="about.html" class="btn">詳しく見る</a>
+      </div>
+      <div class="about-image js-fade"></div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-item js-fade">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">従業員数</div>
+      </div>
+      <div class="stat-item js-fade">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">取引実績</div>
+      </div>
+      <div class="stat-item js-fade">
+        <div class="stat-number">7年</div>
+        <div class="stat-label">創業年数</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- サービスセクション -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label js-fade">Our Services</div>
+      <h2 class="section-title js-text-fade" data-splitting>私たちのできること</h2>
+      <p class="section-description js-fade">
+        4つの事業領域で、お客様のあらゆるニーズにお応えします。<br>
+        確かな技術力と豊富な経験で、最適なソリューションをご提供いたします。
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card js-fade">
+        <div class="service-number">01</div>
+        <h3 class="service-title">SV事業</h3>
+        <p class="service-description">
+          スーパーバイザーが携帯ショップの運営を全面的にサポート。お客様の受付から
+お見送りまで、スタッフ様への的確なアドバイスと指導により、店舗運営の効率化と売上向上を実現します。
+        </p>
+        <ul class="service-features">
+          <li>店舗運営の最適化支援</li>
+          <li>スタッフ教育・研修プログラム</li>
+          <li>顧客満足度向上施策</li>
+          <li>売上分析とアドバイス</li>
+        </ul>
+      </div>
+      <div class="service-card js-fade">
+        <div class="service-number">02</div>
+        <h3 class="service-title">SES事業</h3>
+        <p class="service-description">
+          優秀なエンジニアがお客様先に常駐し、システム設計・開発・保守からインフラ構築まで、幅広い技術領域でプロジェクトの成功を支援します。
+        </p>
+        <ul class="service-features">
+          <li>システム設計・開発</li>
+          <li>インフラ構築・運用保守</li>
+          <li>技術コンサルティング</li>
+          <li>プロジェクト管理支援</li>
+        </ul>
+      </div>
+      <div class="service-card js-fade">
+        <div class="service-number">03</div>
+        <h3 class="service-title">セールスプロモーション事業</h3>
+        <p class="service-description">
+          大手キャリア様の各種インターネット回線、携帯電話、通信機器の販売代理店として、効果的な販促活動と営業戦略で売上拡大を実現します。
+        </p>
+        <ul class="service-features">
+          <li>販売戦略の立案・実行</li>
+          <li>プロモーション企画</li>
+          <li>営業代行サービス</li>
+          <li>マーケティング支援</li>
+        </ul>
+      </div>
+      <div class="service-card js-fade">
+        <div class="service-number">04</div>
+        <h3 class="service-title">アウトソーシング事業</h3>
+        <p class="service-description">
+          再就職支援コンサルティングから各種業務代行まで、人材に関わる様々なサービスで、お客様の業務効率化とコスト削減をサポートします。
+        </p>
+        <ul class="service-features">
+          <li>人材派遣・紹介</li>
+          <li>業務プロセス最適化</li>
+          <li>コールセンター運営</li>
+          <li>バックオフィス支援</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: var(--spacing-3xl);">
+      <a href="services.html" class="btn btn-primary">サービス詳細を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 実績セクション -->
+<section class="section achievements-section dark-section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label js-fade">Achievements</div>
+      <h2 class="section-title js-text-fade" data-splitting>私たちの強み</h2>
+      <p class="section-description js-fade">
+        7年間の実績と経験が、確かな信頼を生み出します
+      </p>
+    </div>
+    <div class="achievements-grid">
+      <div class="achievement-card js-fade">
+        <div class="achievement-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="32" cy="32" r="24"/>
+            <path d="M20 32l8 8 16-16"/>
+          </svg>
+        </div>
+        <h3 class="achievement-title">確かな実績</h3>
+        <p class="achievement-description">
+          創業以来、100社以上の企業様との取引実績。確かな信頼関係を構築してきました。
+        </p>
+      </div>
+      <div class="achievement-card js-fade">
+        <div class="achievement-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M32 12v20l14 14"/>
+            <circle cx="32" cy="32" r="24"/>
+          </svg>
+        </div>
+        <h3 class="achievement-title">迅速な対応</h3>
+        <p class="achievement-description">
+          お客様のニーズに素早く対応。スピーディーな意思決定で、ビジネスチャンスを逃しません。
+        </p>
+      </div>
+      <div class="achievement-card js-fade">
+        <div class="achievement-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M16 32h32M32 16v32"/>
+            <circle cx="32" cy="32" r="24"/>
+          </svg>
+        </div>
+        <h3 class="achievement-title">総合力</h3>
+        <p class="achievement-description">
+          4つの事業領域のシナジーを活かし、ワンストップでトータルソリューションを提供します。
+        </p>
+      </div>
+      <div class="achievement-card js-fade">
+        <div class="achievement-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="20" cy="32" r="8"/>
+            <circle cx="44" cy="32" r="8"/>
+            <path d="M28 32h8"/>
+          </svg>
+        </div>
+        <h3 class="achievement-title">パートナーシップ</h3>
+        <p class="achievement-description">
+          お客様と共に成長することを目指し、長期的なパートナーシップを大切にしています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ニュースセクション -->
+<section class="section">
+  <div class="section-container">
+    <div class="section-header">
+      <div class="section-label js-fade">News & Topics</div>
+      <h2 class="section-title js-text-fade" data-splitting>お知らせ</h2>
+    </div>
+    <div class="news-list">
+      <div class="news-item js-fade">
+        <div class="news-date">2024.01.15</div>
+        <div class="news-content">
+          <span class="news-category">お知らせ</span>
+          <h3 class="news-title">新年のご挨拶と今年の事業方針について</h3>
+          <p class="news-excerpt">
+            明けましておめでとうございます。本年も合同会社SHAREをよろしくお願いいたします。2024年は更なる事業拡大を目指し、新たなサービスの展開を予定しております。
+          </p>
+        </div>
+      </div>
+      <div class="news-item js-fade">
+        <div class="news-date">2023.12.20</div>
+        <div class="news-content">
+          <span class="news-category">採用</span>
+          <h3 class="news-title">2024年度 新卒・中途採用を開始しました</h3>
+          <p class="news-excerpt">
+            事業拡大に伴い、新卒・中途採用を積極的に行っております。エンジニア、営業、事務など幅広い職種で募集中です。詳細は採用ページをご覧ください。
+          </p>
+        </div>
+      </div>
+      <div class="news-item js-fade">
+        <div class="news-date">2023.11.01</div>
+        <div class="news-content">
+          <span class="news-category">事業</span>
+          <h3 class="news-title">SES事業部が新たに3社との契約を締結</h3>
+          <p class="news-excerpt">
+            この度、SES事業部において新たに3社との業務委託契約を締結いたしました。より多くのお客様に価値を提供できるよう、引き続き努めてまいります。
+          </p>
+        </div>
+      </div>
+      <div class="news-item js-fade">
+        <div class="news-date">2021.12.01</div>
+        <div class="news-content">
+          <span class="news-category">お知らせ</span>
+          <span class="news-badge">NEW</span>
+          <h3 class="news-title">ホームページをリニューアルしました</h3>
+          <p class="news-excerpt">
+            この度、当社ホームページを全面リニューアルいたしました。より見やすく、使いやすいサイトを目指して、デザインと機能を一新しております。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTAセクション -->
+<section class="section cta-section">
+  <div class="section-container">
+    <div class="cta-content js-fade">
+      <h2 class="cta-title">共に、新しい価値を創造しませんか？</h2>
+      <p class="cta-description">
+        ビジネスの課題解決から新規事業の立ち上げまで、<br>
+        あらゆるニーズにお応えします。まずはお気軽にご相談ください。
+      </p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn">お問い合わせ</a>
+        <a href="recruit.html" class="btn">採用情報を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="modern-footer">
+  <div class="footer-wave"></div>
+  <div class="footer-decoration footer-decoration-1"></div>
+  <div class="footer-decoration footer-decoration-2"></div>
+  
+  <div class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="SHARE">
+          <span class="footer-logo-text">SHARE</span>
+        </div>
+        <p class="footer-tagline">
+          幸せ、楽しさ、新たな価値を世界にSHAREする<br>
+          私たちは、お客様のビジネスパートナーとして、<br>
+          共に成長し、新たな価値を創造し続けます。
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>サービス</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#sv">SV事業</a></li>
+          <li><a href="services.html#ses">SES事業</a></li>
+          <li><a href="services.html#sales">セールスプロモーション</a></li>
+          <li><a href="services.html#outsourcing">アウトソーシング</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>企業情報</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="about.html#philosophy">企業理念</a></li>
+          <li><a href="about.html#message">代表メッセージ</a></li>
+          <li><a href="works.html">実績・事例</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column footer-newsletter">
+        <h3>ニュースレター</h3>
+        <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 16px;">
+          最新情報をお届けします
+        </p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="メールアドレス" required>
+          <button type="submit" class="newsletter-button">登録する</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-divider"></div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="footer-copyright">
+      © 2024 SHARE LLC. All rights reserved.
+    </div>
+    <ul class="footer-legal">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">利用規約</a></li>
+      <li><a href="#">サイトマップ</a></li>
+      <li><a href="admin.html">管理者</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- GSAP & Splitting.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+
+<script>
+// ===== 初期化 =====
+gsap.registerPlugin(ScrollTrigger);
+
+// Splitting.js初期化
+Splitting();
+
+// ===== プリローダー =====
+let loadProgress = 0;
+const preloader = document.querySelector('.preloader');
+const preloaderPercentage = document.querySelector('.preloader-percentage');
+
+const loadInterval = setInterval(() => {
+  loadProgress += Math.random() * 10;
+  if (loadProgress >= 100) {
+    loadProgress = 100;
+    clearInterval(loadInterval);
+    
+    preloaderPercentage.textContent = '100%';
+    
+    setTimeout(() => {
+      gsap.to(preloader, {
+        opacity: 0,
+        duration: 0.6,
+        onComplete: () => {
+          preloader.style.display = 'none';
+          initAnimations();
+        }
+      });
+    }, 400);
+  } else {
+    preloaderPercentage.textContent = Math.floor(loadProgress) + '%';
+  }
+}, 100);
+
+// ===== メインアニメーション =====
+function initAnimations() {
+  // ヒーローアニメーション
+  const heroTimeline = gsap.timeline();
+  
+  heroTimeline
+    .to('.hero-title .char', {
+      y: 0,
+      stagger: 0.02,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .to('.hero-subtitle', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.4')
+    .to('.hero-description', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.3')
+    .to('.hero-cta', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, '-=0.3')
+    .to('.scroll-indicator', {
+      opacity: 1,
+      duration: 0.6
+    }, '-=0.2');
+  
+  // スクロールトリガーアニメーション
+  gsap.utils.toArray('.js-fade').forEach(element => {
+    gsap.to(element, {
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        once: true
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  });
+  
+  // テキストフェードアニメーション
+  gsap.utils.toArray('.js-text-fade').forEach(element => {
+    gsap.to(element.querySelectorAll('.char'), {
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        once: true
+      },
+      y: 0,
+      stagger: 0.02,
+      duration: 0.6,
+      ease: 'power3.out'
+    });
+  });
+  
+  // About セクションアニメーション
+  gsap.to('.about-text', {
+    scrollTrigger: {
+      trigger: '.about-text',
+      start: 'top 80%',
+      once: true
+    },
+    opacity: 1,
+    x: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+  
+  gsap.to('.about-image', {
+    scrollTrigger: {
+      trigger: '.about-image',
+      start: 'top 80%',
+      once: true
+    },
+    opacity: 1,
+    x: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+  
+  // Stats アニメーション
+  ScrollTrigger.batch('.stat-item', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }),
+    start: 'top 80%',
+    once: true
+  });
+  
+  // サービスカードのスタガーアニメーション
+  ScrollTrigger.batch('.service-card', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }),
+    start: 'top 80%',
+    once: true
+  });
+  
+  // 実績カードアニメーション
+  ScrollTrigger.batch('.achievement-card', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1,
+      scale: 1,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }),
+    start: 'top 80%',
+    once: true
+  });
+  
+  // ニュースアイテムアニメーション
+  ScrollTrigger.batch('.news-item', {
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: 'power3.out'
+    }),
+    start: 'top 80%',
+    once: true
+  });
+}
+
+// ===== マウストレイル =====
+const trailContainer = document.querySelector('.trail-container');
+const trailImages = [];
+const trailImageCount = 10;
+let mouseX = 0;
+let mouseY = 0;
+
+// トレイル画像の作成
+for (let i = 0; i < trailImageCount; i++) {
+  const img = document.createElement('div');
+  img.className = 'trail-image';
+  img.innerHTML = `
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="40" stroke="${i % 2 === 0 ? '#F9A825' : '#1565C0'}" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="50" cy="50" r="30" stroke="${i % 2 === 0 ? '#1565C0' : '#F9A825'}" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="50" cy="50" r="20" stroke="${i % 2 === 0 ? '#F9A825' : '#1565C0'}" stroke-width="0.5" opacity="0.2"/>
+    </svg>
+  `;
+  trailContainer.appendChild(img);
+  trailImages.push(img);
+}
+
+let currentImageIndex = 0;
+let lastMouseMove = 0;
+const mouseThreshold = 30;
+let lastX = 0;
+let lastY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  
+  const distance = Math.sqrt(Math.pow(mouseX - lastX, 2) + Math.pow(mouseY - lastY, 2));
+  
+  if (distance > mouseThreshold && Date.now() - lastMouseMove > 50) {
+    const img = trailImages[currentImageIndex];
+    
+    gsap.set(img, {
+      x: mouseX,
+      y: mouseY,
+      scale: 0,
+      opacity: 0
+    });
+    
+    gsap.to(img, {
+      scale: 1,
+      opacity: 0.3,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+    
+    gsap.to(img, {
+      scale: 1.5,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: 'power2.in'
+    });
+    
+    currentImageIndex = (currentImageIndex + 1) % trailImageCount;
+    lastMouseMove = Date.now();
+    lastX = mouseX;
+    lastY = mouseY;
+  }
+});
+
+// ===== モバイルメニュー =====
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+let menuOpen = false;
+
+menuToggle?.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  
+  if (menuOpen) {
+    mobileMenu.classList.add('active');
+    gsap.to('.menu-toggle span:nth-child(1)', {
+      rotation: 45,
+      y: 6,
+      duration: 0.3
+    });
+    gsap.to('.menu-toggle span:nth-child(2)', {
+      opacity: 0,
+      duration: 0.3
+    });
+    gsap.to('.menu-toggle span:nth-child(3)', {
+      rotation: -45,
+      y: -6,
+      duration: 0.3
+    });
+  } else {
+    mobileMenu.classList.remove('active');
+    gsap.to('.menu-toggle span:nth-child(1)', {
+      rotation: 0,
+      y: 0,
+      duration: 0.3
+    });
+    gsap.to('.menu-toggle span:nth-child(2)', {
+      opacity: 1,
+      duration: 0.3
+    });
+    gsap.to('.menu-toggle span:nth-child(3)', {
+      rotation: 0,
+      y: 0,
+      duration: 0.3
+    });
+  }
+});
+
+// モバイルメニューのリンククリックで閉じる
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOpen = false;
+    mobileMenu.classList.remove('active');
+    gsap.to('.menu-toggle span', {
+      rotation: 0,
+      y: 0,
+      opacity: 1,
+      duration: 0.3
+    });
+  });
+});
+
+// ===== パララックス効果 =====
+gsap.to('.hero', {
+  scrollTrigger: {
+    trigger: '.hero',
+    start: 'top top',
+    end: 'bottom top',
+    scrub: true
+  },
+  y: -100,
+  ease: 'none'
+});
+</script>
+
+</body>
+</html>
