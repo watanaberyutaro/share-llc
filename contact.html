@@ -438,10 +438,10 @@
         <div class="form-container">
             <h2>お問い合わせフォーム</h2>
             <div id="formMessage" style="display: none; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: center; font-weight: 700;"></div>
-            <form id="contactForm" action="https://formsubmit.co/hp@share-llc.co.jp" method="POST">
+            <form id="contactForm" action="mail.php" method="POST">
                 <div class="form-group">
                     <label for="inquiry-type">お問い合わせ種別<span class="required">*</span></label>
-                    <select id="inquiry-type" name="inquiry-type" required>
+                    <select id="inquiry-type" name="お問い合わせ種別" required>
                         <option value="">選択してください</option>
                         <option value="サービスに関するお問い合わせ">サービスに関するお問い合わせ</option>
                         <option value="採用に関するお問い合わせ">採用に関するお問い合わせ</option>
@@ -452,12 +452,12 @@
 
                 <div class="form-group">
                     <label for="company-name">会社名・団体名</label>
-                    <input type="text" id="company-name" name="company-name" placeholder="例: 株式会社サンプル">
+                    <input type="text" id="company-name" name="会社名・団体名" placeholder="例: 株式会社サンプル">
                 </div>
 
                 <div class="form-group">
                     <label for="name">お名前<span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="例: 山田 太郎">
+                    <input type="text" id="name" name="お名前" required placeholder="例: 山田 太郎">
                 </div>
 
                 <div class="form-group">
@@ -467,19 +467,13 @@
 
                 <div class="form-group">
                     <label for="phone">電話番号</label>
-                    <input type="tel" id="phone" name="phone" placeholder="例: 03-1234-5678">
+                    <input type="tel" id="phone" name="電話番号" placeholder="例: 03-1234-5678">
                 </div>
 
                 <div class="form-group">
                     <label for="message">お問い合わせ内容<span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+                    <textarea id="message" name="お問い合わせ内容" required placeholder="お問い合わせ内容をご記入ください"></textarea>
                 </div>
-
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_subject" value="【お問い合わせ】合同会社SHARE ウェブサイトより">
-                <input type="text" name="_honey" style="display:none">
 
                 <button type="submit" class="submit-button">送信する</button>
 
@@ -664,39 +658,17 @@ function showMessage(message, isSuccess) {
     }, 5000);
 }
 
-// FormSubmit handles form submission automatically
-// Client-side validation only
+// PHP mail form - basic client-side validation
+// Full validation and processing is handled by mail.php
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        // Get form data
-        const inquiryType = document.getElementById('inquiry-type').value;
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Basic form validation
-        if (!inquiryType || !name || !email || !message) {
-            e.preventDefault();
-            showMessage('必須項目を全て入力してください。', false);
-            return false;
-        }
-
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            e.preventDefault();
-            showMessage('正しいメールアドレスを入力してください。', false);
-            return false;
-        }
-
         // Show sending message
         const submitButton = this.querySelector('button[type="submit"]');
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = '送信中...';
         }
-
-        // Form will submit naturally to FormSubmit
+        // Form will submit to mail.php
         return true;
     });
 }
