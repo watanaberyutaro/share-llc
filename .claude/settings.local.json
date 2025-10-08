@@ -37,7 +37,12 @@
       "Bash(for file in company.html service.html interview.html news.html recruit.html contact.html news-detail.html interview-detail.html admin.html)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: 合同会社SHARE corporate website\n\n- Implemented responsive design for all pages\n- Added dynamic news and interview management system\n- Created admin panel with authentication\n- Integrated Three.js 3D background effects\n- Set up JSON-based content management\n- Implemented NEW badge for latest news only\n- Fixed mobile layout issues for news and interview pages\n- Added image preservation for content updates\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
