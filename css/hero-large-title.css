@@ -110,7 +110,7 @@
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .topMv__inner {
         padding: 50px 20px 15px 20px !important;
     }

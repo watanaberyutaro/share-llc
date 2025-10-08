@@ -437,15 +437,16 @@
     <section id="form" class="contact-form-section">
         <div class="form-container">
             <h2>お問い合わせフォーム</h2>
-            <form action="#" method="post">
+            <div id="formMessage" style="display: none; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: center; font-weight: 700;"></div>
+            <form id="contactForm" action="#" method="post">
                 <div class="form-group">
                     <label for="inquiry-type">お問い合わせ種別<span class="required">*</span></label>
                     <select id="inquiry-type" name="inquiry-type" required>
                         <option value="">選択してください</option>
-                        <option value="service">サービスに関するお問い合わせ</option>
-                        <option value="recruit">採用に関するお問い合わせ</option>
-                        <option value="partner">パートナーシップに関するお問い合わせ</option>
-                        <option value="other">その他</option>
+                        <option value="サービスに関するお問い合わせ">サービスに関するお問い合わせ</option>
+                        <option value="採用に関するお問い合わせ">採用に関するお問い合わせ</option>
+                        <option value="パートナーシップに関するお問い合わせ">パートナーシップに関するお問い合わせ</option>
+                        <option value="その他">その他</option>
                     </select>
                 </div>
 
@@ -605,7 +606,7 @@
         <div class="footer__company-info">
             <h3>合同会社SHARE</h3>
             <p>〒110-0015 東京都台東区東上野６丁目２３−５ 第二雨宮ビル1002</p>
-            <p>TEL: 048-961-8663 | 代表携帯: 090-6684-7792 / 090-1828-5970</p>
+            <p>TEL: 090-6684-7792 / 090-1828-5970</p>
             <p>Email: info@share-llc.jp</p>
         </div>
         <div class="footer__links">
@@ -638,7 +639,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form validation and submission
-const contactForm = document.querySelector('form');
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+function showMessage(message, isSuccess) {
+    formMessage.textContent = message;
+    formMessage.style.display = 'block';
+    formMessage.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da';
+    formMessage.style.color = isSuccess ? '#155724' : '#721c24';
+    formMessage.style.border = isSuccess ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+
+    // Scroll to message
+    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        formMessage.style.display = 'none';
+    }, 5000);
+}
+
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -653,14 +672,14 @@ if (contactForm) {
 
         // Basic form validation
         if (!inquiryType || !name || !email || !message) {
-            alert('必須項目を全て入力してください。');
+            showMessage('必須項目を全て入力してください。', false);
             return;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            alert('正しいメールアドレスを入力してください。');
+            showMessage('正しいメールアドレスを入力してください。', false);
             return;
         }
 
@@ -694,14 +713,14 @@ if (contactForm) {
             const result = await response.json();
 
             if (result.success) {
-                alert(result.message);
+                showMessage(result.message, true);
                 this.reset();
             } else {
-                alert(result.message || 'エラーが発生しました。');
+                showMessage(result.message || 'エラーが発生しました。お電話またはメールで直接お問い合わせください。', false);
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('送信中にエラーが発生しました。しばらく時間をおいて再度お試しください。');
+            showMessage('送信中にエラーが発生しました。お電話（090-1828-5970）またはメール（info@share-llc.jp）で直接お問い合わせください。', false);
         } finally {
             // Re-enable submit button
             if (submitButton) {

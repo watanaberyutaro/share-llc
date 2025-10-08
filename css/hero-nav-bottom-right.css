@@ -152,7 +152,7 @@
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .hero-nav-bottom-right {
         bottom: 20px !important;
         padding: 0 20px !important;

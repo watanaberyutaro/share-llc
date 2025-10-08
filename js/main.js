@@ -15,7 +15,7 @@
 
         // メニューの開閉（レスポンシブ対応）(Menu Toggle - Responsive)
         function toggleMenu() {
-            if ($(window).width() <= 640) {
+            if ($(window).width() <= 768) {
                 $('.parent span').off('click').on('click', function () {
                     $(this).toggleClass('active').next('.child').slideToggle(100);
                 });
@@ -64,7 +64,7 @@
 
         // フィルターボックスのイベント設定 (Filter Box Event Setup)
         function setFilterBoxEvent() {
-            if (window.matchMedia('(max-width: 640px)').matches) {
+            if (window.matchMedia('(max-width: 768px)').matches) {
                 $('.filter-box dl dt').off('click').on('click', function () {
                     $(this).next().slideToggle();
                     $(this).toggleClass('active');

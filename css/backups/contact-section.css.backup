@@ -1,4 +1,4 @@
-/* Contact Section Styles - Responsive & Fluid Design */
+/* Contact Section Styles - Dynamic & Impressive Design */
 
 /* Contact Block Structure */
 .topContact,
@@ -15,7 +15,7 @@ section.topContact {
 .topContact__inner {
     position: relative;
     display: flex !important;
-    gap: clamp(30px, 5vw, 80px) !important;
+    gap: 80px !important;
     align-items: center !important;
     z-index: 1;
 }
@@ -27,17 +27,17 @@ section.topContact {
 }
 
 .contact-message h2 {
-    font-size: clamp(2rem, 5vw, 5rem) !important;
+    font-size: 5rem !important;
     font-weight: 900 !important;
     color: #ffffff !important;
     line-height: 1.2 !important;
-    margin-bottom: clamp(20px, 3vw, 30px) !important;
+    margin-bottom: 30px !important;
 }
 
 .contact-message h2 a {
     display: inline-flex !important;
     align-items: center !important;
-    gap: clamp(10px, 2vw, 20px) !important;
+    gap: 20px !important;
     text-decoration: none !important;
     color: #ffffff !important;
     transition: opacity 0.3s ease !important;
@@ -49,11 +49,10 @@ section.topContact {
 
 /* Circle Arrow Button */
 .contact-message .btn-arrows {
-    width: clamp(50px, 8vw, 78px) !important;
-    height: clamp(50px, 8vw, 78px) !important;
+    width: 78px !important;
+    height: 78px !important;
     max-width: 78px !important;
     max-height: 78px !important;
-    flex-shrink: 0;
 }
 
 .contact-message .btn-arrows .cls-1 {
@@ -69,10 +68,10 @@ section.topContact {
 
 /* Contact Description */
 .contact-message .description {
-    font-size: clamp(16px, 1.8vw, 20px) !important;
+    font-size: 20px !important;
     color: rgba(255,255,255,0.8) !important;
     line-height: 1.8 !important;
-    margin-bottom: clamp(30px, 4vw, 50px) !important;
+    margin-bottom: 50px !important;
     font-weight: 400;
 }
 
@@ -80,15 +79,15 @@ section.topContact {
 .contact-cta-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(15px, 2vw, 20px);
-    margin-bottom: clamp(30px, 3vw, 40px);
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .cta-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 20px;
-    padding: clamp(20px, 3vw, 30px);
+    padding: 30px;
     transition: background 0.3s ease;
 }
 
@@ -101,7 +100,7 @@ section.topContact {
 }
 
 .cta-card .card-content h3 {
-    font-size: clamp(14px, 1.6vw, 18px);
+    font-size: 18px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
@@ -109,7 +108,7 @@ section.topContact {
 }
 
 .cta-card .card-main-text {
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: 22px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
@@ -117,14 +116,14 @@ section.topContact {
 }
 
 .cta-card .card-sub-text {
-    font-size: clamp(12px, 1.4vw, 14px);
+    font-size: 14px;
     color: rgba(255,255,255,0.8);
     margin-bottom: 8px;
     line-height: 1.6;
 }
 
 .cta-card .card-hours {
-    font-size: clamp(11px, 1.2vw, 13px);
+    font-size: 13px;
     color: rgba(255,255,255,0.7);
     font-weight: 500;
 }
@@ -138,16 +137,15 @@ section.topContact {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(15px, 3vw, 30px);
-    padding: clamp(18px, 2.5vw, 25px) clamp(30px, 4vw, 45px);
+    gap: 30px;
+    padding: 25px 45px;
     background: #ffffff;
     color: #000000;
     text-decoration: none;
     border-radius: 60px;
     font-weight: 700;
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: 20px;
     transition: opacity 0.3s ease;
-    max-width: 100%;
 }
 
 .btn-contact-large:hover {
@@ -158,21 +156,20 @@ section.topContact {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(30px, 4vw, 40px);
-    height: clamp(30px, 4vw, 40px);
+    width: 40px;
+    height: 40px;
     background: rgba(0,0,0,0.05);
     border-radius: 50%;
-    flex-shrink: 0;
 }
 
 .btn-contact-large .btn-icon svg {
-    width: clamp(18px, 2.5vw, 24px);
-    height: clamp(18px, 2.5vw, 24px);
+    width: 24px;
+    height: 24px;
 }
 
 /* Contact Visual Section */
 .contact-visual {
-    width: clamp(300px, 40vw, 500px);
+    width: 500px;
     flex-shrink: 0;
     position: relative;
 }
@@ -187,12 +184,12 @@ section.topContact {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 20px;
-    padding: clamp(30px, 4vw, 40px);
+    padding: 40px;
 }
 
 .info-section {
-    margin-bottom: clamp(25px, 3.5vw, 35px);
-    padding-bottom: clamp(25px, 3.5vw, 35px);
+    margin-bottom: 35px;
+    padding-bottom: 35px;
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
@@ -206,7 +203,7 @@ section.topContact {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: 16px;
     font-weight: 700;
     color: rgba(255,255,255,0.9);
     margin-bottom: 15px;
@@ -215,13 +212,13 @@ section.topContact {
 }
 
 .info-section h4 i {
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: 20px;
     color: rgba(255,255,255,0.8);
 }
 
 .info-section p,
 .info-section address {
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: 16px;
     color: #ffffff;
     line-height: 1.8;
     margin: 0;
@@ -233,42 +230,21 @@ section.topContact {
 .contact-message svg {
     max-width: none !important;
     max-height: none !important;
-    width: clamp(50px, 8vw, 78px) !important;
-    height: clamp(50px, 8vw, 78px) !important;
+    width: 78px !important;
+    height: 78px !important;
     margin-left: 0 !important;
     vertical-align: initial !important;
 }
 
-/* Tablet Portrait - 769px to 1024px */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .topContact__inner {
-        gap: 40px !important;
-    }
-
-    .contact-cta-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .contact-visual {
-        width: 380px;
-    }
-
-    .contact-info-card {
-        padding: 35px;
-    }
-}
-
-/* Mobile - up to 768px */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .topContact__inner {
         flex-direction: column !important;
-        gap: 40px !important;
+        gap: 50px !important;
     }
 
     .contact-message h2 {
-        font-size: 2.25rem !important;
-        margin-bottom: 20px !important;
+        font-size: 36px !important;
     }
 
     .contact-message .btn-arrows {
@@ -283,42 +259,21 @@ section.topContact {
 
     .contact-message .description {
         font-size: 16px !important;
-        margin-bottom: 30px !important;
     }
 
     .contact-cta-cards {
         grid-template-columns: 1fr;
         gap: 15px;
-        margin-bottom: 30px;
     }
 
     .cta-card {
-        padding: 20px;
-    }
-
-    .cta-card .card-content h3 {
-        font-size: 14px;
-    }
-
-    .cta-card .card-main-text {
-        font-size: 18px;
+        padding: 25px;
     }
 
     .btn-contact-large {
         width: 100%;
-        padding: 18px 30px;
-        font-size: 16px;
-        gap: 15px;
-    }
-
-    .btn-contact-large .btn-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .btn-contact-large .btn-icon svg {
-        width: 18px;
-        height: 18px;
+        padding: 20px 30px;
+        font-size: 18px;
     }
 
     .contact-visual {
@@ -326,49 +281,22 @@ section.topContact {
     }
 
     .contact-info-card {
-        padding: 30px;
-    }
-
-    .info-section {
-        margin-bottom: 25px;
-        padding-bottom: 25px;
-    }
-
-    .info-section h4 {
-        font-size: 14px;
-    }
-
-    .info-section h4 i {
-        font-size: 16px;
-    }
-
-    .info-section p,
-    .info-section address {
-        font-size: 14px;
+        padding: 35px;
     }
 }
 
-/* Small Mobile - up to 480px */
-@media (max-width: 480px) {
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
     .contact-message h2 {
-        font-size: 1.75rem !important;
+        font-size: 4rem !important;
     }
 
-    .contact-message .description br {
-        display: none;
-    }
-
-    .cta-card {
-        padding: 18px;
+    .contact-visual {
+        width: 400px;
     }
 
     .contact-info-card {
-        padding: 25px;
-    }
-
-    .btn-contact-large {
-        padding: 16px 25px;
-        font-size: 15px;
+        padding: 40px;
     }
 }
 
@@ -379,7 +307,7 @@ section.topContact {
     }
 
     .topContact .block-content {
-        padding: clamp(80px, 10vw, 100px) clamp(40px, 6vw, 60px) clamp(100px, 12vw, 120px) clamp(40px, 6vw, 60px);
+        padding: 100px 60px 120px 60px;
         flex: 1;
         border-left: 1px solid rgba(255,255,255,0.15);
     }
@@ -403,16 +331,5 @@ section.topContact {
         letter-spacing: 0.2em !important;
         color: #999999 !important;
         text-transform: uppercase;
-    }
-}
-
-/* Large Desktop - 1400px and above */
-@media (min-width: 1400px) {
-    .topContact__inner {
-        gap: 100px !important;
-    }
-
-    .contact-visual {
-        width: 550px;
     }
 }

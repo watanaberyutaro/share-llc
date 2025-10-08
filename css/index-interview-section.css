@@ -261,16 +261,16 @@
     }
 
     .interview-col .col {
-        flex: 0 0 320px !important;
+        flex: 0 0 280px !important;
     }
 
     .col-staff {
-        height: 360px !important;
+        height: 320px !important;
     }
 
     .col-text {
         padding: 20px !important;
-        min-height: 280px !important;
+        min-height: 260px !important;
     }
 
     .col-text h3 {

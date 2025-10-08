@@ -168,7 +168,7 @@ code, pre {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     body {
         font-size: 14px;
     }

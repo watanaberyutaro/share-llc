@@ -43,7 +43,11 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(for file in admin.html contact.html interview-detail.html interview.html news-detail.html news.html recruit.html service.html company.html index.html)",
+      "Bash(awk:*)",
+      "Bash(for:*)",
+      "Bash(if grep -q \"max-width.*640\\|max-width.*641\" \"/Users/watanaberyuutarou/Desktop/3125映像/myProject/SHAREHP3/css/$file\")"
     ],
     "deny": [],
     "ask": []

@@ -164,7 +164,7 @@
 }
 
 /* Extra small screens */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .mv-text h2 {
         font-size: 28px !important;
     }

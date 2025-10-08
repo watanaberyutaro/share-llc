@@ -553,7 +553,7 @@ img.wp-smiley, img.emoji {
     gap: 2em;
 }
 
-@media (min-width: 782px) {
+@media (min-width: 769px) {
     .wp-block-columns {
         flex-wrap: nowrap !important;
     }
@@ -571,13 +571,13 @@ img.wp-smiley, img.emoji {
     align-items: flex-end;
 }
 
-@media (max-width: 781px) {
+@media (max-width: 768px) {
     .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
         flex-basis: 100% !important;
     }
 }
 
-@media (min-width: 782px) {
+@media (min-width: 769px) {
     .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
         flex-basis: 0;
         flex-grow: 1;

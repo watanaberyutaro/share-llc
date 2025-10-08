@@ -25,7 +25,7 @@ window.SiteConfig = {
             pauseOnHover: false,
             responsive: [
                 {
-                    breakpoint: 640,
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
                     },
@@ -42,7 +42,7 @@ window.SiteConfig = {
             draggable: false,
             responsive: [
                 {
-                    breakpoint: 641,
+                    breakpoint: 768,
                     settings: {
                         vertical: false,
                         fade: true,
@@ -56,9 +56,9 @@ window.SiteConfig = {
 
     // Responsive breakpoints
     breakpoints: {
-        mobile: 640,
-        tablet: 768,
-        desktop: 1024
+        mobile: 768,
+        tablet: 1024,
+        desktop: 1280
     },
 
     // Feature flags

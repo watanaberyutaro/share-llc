@@ -149,7 +149,7 @@
     word-break: break-word;
 }
 
-@media (max-width: 781px) {
+@media (max-width: 768px) {
     .wp-block-columns:not(.is-not-stacked-on-mobile) {
         flex-direction: column;
     }
