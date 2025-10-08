@@ -1,0 +1,24 @@
+# robots.txt for share-llc.co.jp
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://share-llc.co.jp/sitemap.xml
+
+# Disallow admin pages
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /data/
+
+# Allow all other pages
+Allow: /index.html
+Allow: /company.html
+Allow: /service.html
+Allow: /interview.html
+Allow: /news.html
+Allow: /recruit.html
+Allow: /contact.html
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
