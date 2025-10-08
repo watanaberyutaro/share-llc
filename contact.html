@@ -438,7 +438,7 @@
         <div class="form-container">
             <h2>お問い合わせフォーム</h2>
             <div id="formMessage" style="display: none; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: center; font-weight: 700;"></div>
-            <form id="contactForm" action="#" method="post">
+            <form id="contactForm" action="https://formsubmit.co/hp@share-llc.co.jp" method="POST">
                 <div class="form-group">
                     <label for="inquiry-type">お問い合わせ種別<span class="required">*</span></label>
                     <select id="inquiry-type" name="inquiry-type" required>
@@ -474,6 +474,12 @@
                     <label for="message">お問い合わせ内容<span class="required">*</span></label>
                     <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
                 </div>
+
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="【お問い合わせ】合同会社SHARE ウェブサイトより">
+                <input type="text" name="_honey" style="display:none">
 
                 <button type="submit" class="submit-button">送信する</button>
 
@@ -658,76 +664,40 @@ function showMessage(message, isSuccess) {
     }, 5000);
 }
 
+// FormSubmit handles form submission automatically
+// Client-side validation only
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
+    contactForm.addEventListener('submit', function(e) {
         // Get form data
         const inquiryType = document.getElementById('inquiry-type').value;
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const company = document.getElementById('company-name').value;
-        const phone = document.getElementById('phone').value;
         const message = document.getElementById('message').value;
 
         // Basic form validation
         if (!inquiryType || !name || !email || !message) {
+            e.preventDefault();
             showMessage('必須項目を全て入力してください。', false);
-            return;
+            return false;
         }
 
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            e.preventDefault();
             showMessage('正しいメールアドレスを入力してください。', false);
-            return;
+            return false;
         }
 
-        // Disable submit button
+        // Show sending message
         const submitButton = this.querySelector('button[type="submit"]');
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = '送信中...';
         }
 
-        // Prepare data
-        const formData = {
-            inquiryType,
-            name,
-            email,
-            company,
-            phone,
-            message
-        };
-
-        try {
-            // Send to PHP API
-            const response = await fetch('./api/send-contact.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                showMessage(result.message, true);
-                this.reset();
-            } else {
-                showMessage(result.message || 'エラーが発生しました。お電話またはメールで直接お問い合わせください。', false);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            showMessage('送信中にエラーが発生しました。お電話（090-1828-5970）またはメール（info@share-llc.jp）で直接お問い合わせください。', false);
-        } finally {
-            // Re-enable submit button
-            if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = '送信する';
-            }
-        }
+        // Form will submit naturally to FormSubmit
+        return true;
     });
 }
 </script>
