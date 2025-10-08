@@ -1,0 +1,561 @@
+/*!
+ * Component-specific CSS for Life Design Recruit Website
+ * WordPress block styles and custom components
+ */
+
+/* ========================================
+   WORDPRESS BLOCK COMPONENTS
+   ======================================== */
+
+/* Image Blocks */
+.wp-block-image {
+    margin: 0 0 1rem 0;
+}
+
+.wp-block-image img {
+    height: auto;
+    max-width: 100%;
+}
+
+.wp-block-image.alignfull img,
+.wp-block-image.alignwide img {
+    width: 100%;
+}
+
+.wp-block-image.is-style-rounded img {
+    border-radius: 9999px;
+}
+
+.wp-block-image.is-style-circle-mask img {
+    clip-path: circle(50%);
+}
+
+/* Gallery Blocks */
+.wp-block-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wp-block-gallery .wp-block-image {
+    flex: 1 1 calc(50% - 8px);
+    margin: 0;
+}
+
+.wp-block-gallery.columns-1 .wp-block-image {
+    flex-basis: 100%;
+}
+
+.wp-block-gallery.columns-3 .wp-block-image {
+    flex-basis: calc(33.333% - 11px);
+}
+
+.wp-block-gallery.columns-4 .wp-block-image {
+    flex-basis: calc(25% - 12px);
+}
+
+/* Cover Blocks */
+.wp-block-cover {
+    align-items: center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    min-height: 430px;
+    padding: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+    color: inherit;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.wp-block-cover.has-background-dim::before {
+    background-color: #000;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.wp-block-cover.has-background-dim-0::before {
+    opacity: 0;
+}
+
+.wp-block-cover.has-background-dim-10::before {
+    opacity: 0.1;
+}
+
+.wp-block-cover.has-background-dim-20::before {
+    opacity: 0.2;
+}
+
+.wp-block-cover.has-background-dim-30::before {
+    opacity: 0.3;
+}
+
+.wp-block-cover.has-background-dim-40::before {
+    opacity: 0.4;
+}
+
+.wp-block-cover.has-background-dim-50::before {
+    opacity: 0.5;
+}
+
+.wp-block-cover.has-background-dim-60::before {
+    opacity: 0.6;
+}
+
+.wp-block-cover.has-background-dim-70::before {
+    opacity: 0.7;
+}
+
+.wp-block-cover.has-background-dim-80::before {
+    opacity: 0.8;
+}
+
+.wp-block-cover.has-background-dim-90::before {
+    opacity: 0.9;
+}
+
+.wp-block-cover.has-background-dim-100::before {
+    opacity: 1;
+}
+
+/* Column Blocks */
+.wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: normal;
+    gap: 2em;
+}
+
+.wp-block-column {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+@media (max-width: 781px) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) {
+        flex-direction: column;
+    }
+
+    .wp-block-columns:not(.is-not-stacked-on-mobile) .wp-block-column {
+        flex-basis: auto !important;
+    }
+}
+
+/* Group Blocks */
+.wp-block-group {
+    box-sizing: border-box;
+}
+
+.wp-block-group.has-background {
+    padding: 1.25em 2.375em;
+}
+
+/* Button Blocks */
+.wp-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.wp-block-buttons.is-vertical {
+    flex-direction: column;
+}
+
+.wp-block-buttons.is-content-justification-left {
+    justify-content: flex-start;
+}
+
+.wp-block-buttons.is-content-justification-center {
+    justify-content: center;
+}
+
+.wp-block-buttons.is-content-justification-right {
+    justify-content: flex-end;
+}
+
+.wp-block-buttons.is-content-justification-space-between {
+    justify-content: space-between;
+}
+
+.wp-block-button {
+    display: inline-block;
+}
+
+.wp-block-button .wp-block-button__link {
+    background-color: #32373c;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.125em;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    text-align: center;
+    text-decoration: none;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+    opacity: 0.85;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background-color: transparent;
+    border: 2px solid;
+    padding: 0.667em 1.333em;
+}
+
+.wp-block-button.is-style-fill .wp-block-button__link {
+    background-color: #32373c;
+    color: #fff;
+}
+
+/* Heading Blocks */
+.wp-block-heading {
+    margin: 0 0 1rem 0;
+}
+
+.wp-block-heading.has-background {
+    padding: 1.25em 2.375em;
+}
+
+/* Paragraph Blocks */
+.wp-block-paragraph {
+    margin-bottom: 1rem;
+}
+
+.wp-block-paragraph.has-drop-cap:not(:focus):first-letter {
+    float: left;
+    font-size: 8.4em;
+    line-height: 0.68;
+    font-weight: 100;
+    margin: 0.05em 0.1em 0 0;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+/* List Blocks */
+.wp-block-list {
+    box-sizing: border-box;
+    padding-left: 1.5em;
+}
+
+.wp-block-list.has-background {
+    padding: 1.25em 2.375em;
+}
+
+/* Quote Blocks */
+.wp-block-quote {
+    border-left: 0.25rem solid #ddd;
+    margin: 0 0 1rem 0;
+    padding-left: 1rem;
+}
+
+.wp-block-quote cite {
+    color: #666;
+    font-size: 0.875em;
+    position: relative;
+    font-style: normal;
+}
+
+.wp-block-quote.has-text-align-right {
+    border-left: none;
+    border-right: 0.25rem solid #ddd;
+    padding-left: 0;
+    padding-right: 1rem;
+}
+
+.wp-block-quote.has-text-align-center {
+    border: none;
+    padding-left: 0;
+}
+
+/* Pullquote Blocks */
+.wp-block-pullquote {
+    border-top: 4px solid #555;
+    border-bottom: 4px solid #555;
+    margin: 0 0 1rem 0;
+    padding: 3em 0;
+    text-align: center;
+}
+
+.wp-block-pullquote blockquote {
+    font-size: 1.75em;
+    font-style: italic;
+    margin: 0;
+}
+
+.wp-block-pullquote cite {
+    color: #666;
+    display: block;
+    font-size: 0.875em;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+/* Code Blocks */
+.wp-block-code {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+.wp-block-code code {
+    background: none;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: inherit;
+    padding: 0;
+}
+
+/* ========================================
+   MEDIA BLOCKS
+   ======================================== */
+
+/* Audio Blocks */
+.wp-block-audio {
+    margin: 0 0 1rem 0;
+}
+
+.wp-block-audio audio {
+    width: 100%;
+    min-width: 300px;
+}
+
+.wp-block-audio figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Video Blocks */
+.wp-block-video {
+    margin: 0 0 1rem 0;
+}
+
+.wp-block-video video {
+    width: 100%;
+}
+
+.wp-block-video figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* Embed Blocks */
+.wp-block-embed {
+    margin: 0 0 1rem 0;
+    overflow-wrap: break-word;
+}
+
+.wp-block-embed iframe {
+    max-width: 100%;
+}
+
+.wp-block-embed figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright {
+    max-width: 360px;
+    width: 100%;
+}
+
+.wp-block-embed.alignleft .wp-block-embed__wrapper,
+.wp-block-embed.alignright .wp-block-embed__wrapper {
+    min-width: 280px;
+}
+
+/* File Blocks */
+.wp-block-file {
+    box-sizing: border-box;
+    margin: 0 0 1rem 0;
+}
+
+.wp-block-file .wp-block-file__button {
+    background: #32373c;
+    border-radius: 2em;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    margin-left: 0.75em;
+}
+
+/* ========================================
+   SOCIAL & SHARING COMPONENTS
+   ======================================== */
+
+.wp-block-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: flex-start;
+    padding-left: 0;
+    margin: 0;
+}
+
+.wp-block-social-links.is-content-justification-left {
+    justify-content: flex-start;
+}
+
+.wp-block-social-links.is-content-justification-center {
+    justify-content: center;
+}
+
+.wp-block-social-links.is-content-justification-right {
+    justify-content: flex-end;
+}
+
+.wp-block-social-link {
+    display: block;
+    height: auto;
+    transition: transform 0.1s ease;
+}
+
+.wp-block-social-link:hover {
+    transform: scale(1.1);
+}
+
+.wp-block-social-link a {
+    align-items: center;
+    display: flex;
+    line-height: 0;
+    transition: transform 0.1s ease;
+}
+
+.wp-block-social-link svg {
+    height: 1em;
+    width: 1em;
+}
+
+/* ========================================
+   NAVIGATION COMPONENTS
+   ======================================== */
+
+.wp-block-navigation {
+    position: relative;
+}
+
+.wp-block-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item {
+    background: none;
+    display: flex;
+    position: relative;
+}
+
+.wp-block-navigation .wp-block-navigation-item a {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE COMPONENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .wp-block-columns {
+        flex-direction: column;
+    }
+
+    .wp-block-column {
+        flex-basis: auto !important;
+    }
+
+    .wp-block-cover {
+        min-height: 240px;
+    }
+
+    .wp-block-gallery .wp-block-image {
+        flex-basis: 100%;
+    }
+
+    .wp-block-buttons {
+        flex-direction: column;
+    }
+
+    .wp-block-buttons .wp-block-button {
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+.wp-block-button .wp-block-button__link:focus {
+    outline: 2px solid #04a4cc;
+    outline-offset: 2px;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:focus {
+    outline: 2px solid #04a4cc;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .wp-block-button .wp-block-button__link {
+        border: 2px solid;
+    }
+
+    .wp-block-quote {
+        border-left-width: 0.5rem;
+    }
+
+    .wp-block-pullquote {
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-social-link,
+    .wp-block-social-link a {
+        transition: none;
+    }
+
+    .wp-block-social-link:hover {
+        transform: none;
+    }
+}

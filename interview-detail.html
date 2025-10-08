@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <title>社員インタビュー詳細 | 合同会社SHARE</title>
+    <link href="./assets/img/icons/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="./assets/img/icons/apple-touch-icon.svg" rel="apple-touch-icon">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="合同会社SHAREで働く社員のインタビュー詳細をご紹介します。">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Adobe Typekit Fonts -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'vnh5qvp',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,""+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style-complete.css">
+    <link rel="stylesheet" href="./css/block-sections.css">
+    <link rel="stylesheet" href="./css/header-sticky.css">
+    <link rel="stylesheet" href="./css/header-always-visible.css">
+    <link rel="stylesheet" href="./css/footer-fix.css">
+    <link rel="stylesheet" href="./css/footer-custom.css">
+
+    <style>
+        .tk-proxima-nova{font-family:"proxima-nova",sans-serif;}
+        .tk-ryo-gothic-plusn{font-family:"ryo-gothic-plusn",sans-serif;}
+        .tk-acumin-pro{font-family:"acumin-pro",sans-serif;}
+        .tk-fot-tsukuardgothic-std{font-family:"fot-tsukuardgothic-std",sans-serif;}
+
+        /* Interview Detail Styles */
+        .interview-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .detail-header {
+            margin-bottom: 60px;
+        }
+
+        .detail-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #252525;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .detail-labels {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .detail-label {
+            padding: 8px 16px;
+            border: 1px solid #252525;
+            font-size: 14px;
+            font-weight: 700;
+            color: #252525;
+        }
+
+        .detail-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 360px;
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid #252525;
+        }
+
+        .profile-info h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #252525;
+            margin-bottom: 15px;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .profile-meta-item {
+            font-size: 14px;
+            color: #636363;
+            line-height: 1.8;
+        }
+
+        .profile-meta-label {
+            font-weight: 700;
+            color: #252525;
+            margin-right: 10px;
+        }
+
+        .interview-content {
+            margin-top: 60px;
+        }
+
+        .interview-text {
+            font-size: 16px;
+            color: #252525;
+            line-height: 2;
+            white-space: pre-wrap;
+        }
+
+        .back-link {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 12px 40px;
+            border: 1px solid #252525;
+            background: white;
+            color: #252525;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .back-link a:hover {
+            background: #252525;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .interview-detail {
+                padding: 60px 20px;
+            }
+
+            .detail-header h1 {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 240px;
+                height: 320px;
+            }
+
+            .profile-info h2 {
+                font-size: 20px;
+            }
+
+            .interview-text {
+                font-size: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/header-subpages.css">
+
+    <!-- Scroll Animations -->
+    <link rel="stylesheet" href="./css/scroll-animations.css">
+    <link rel="stylesheet" href="./css/page-transition-loading.css">
+</head>
+<body class="page-subpage">
+
+<!-- Page Transition Loading -->
+<div id="page-transition-loading">
+    <div class="loading-text">Loading</div>
+</div>
+
+<header class="commonHeader">
+    <div class="commonHeader__inner">
+        <h1 class="header-ttl">
+            <a href="index.html"><img src="./assets/img/logo.png" alt="SHARE" style="height: 40px;"></a>
+        </h1>
+        <nav class="header-nav">
+            <a href="index.html">HOME</a>
+            <a href="company.html">COMPANY</a>
+            <a href="service.html">SERVICES</a>
+            <a href="interview.html">INTERVIEW</a>
+            <a href="news.html">NEWS</a>
+            <a href="recruit.html">RECRUIT</a>
+            <a href="contact.html" class="btn-header"><span>CONTACT</span></a>
+            <div class="header-address">
+                <p class="address-line">110-0015</p>
+                <p class="address-line">Dai-2 Amemiya Building 1002,</p>
+                <p class="address-line">6-23-5 Higashi-Ueno, Taito-ku,</p>
+                <p class="address-line">Tokyo, Japan</p>
+            </div>
+        </nav>
+        <button class="navToggle" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<main>
+    <article class="interview-detail">
+        <div class="detail-header">
+            <h1 id="interviewTitle"></h1>
+            <div class="detail-labels" id="interviewLabels"></div>
+        </div>
+
+        <div class="detail-profile">
+            <div class="profile-image">
+                <img id="staffImage" src="" alt="">
+            </div>
+            <div class="profile-info">
+                <h2 id="staffName"></h2>
+                <div class="profile-meta">
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">役職:</span>
+                        <span id="staffPosition"></span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">入社:</span>
+                        <span id="staffJoinDate"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="interview-content">
+            <div class="interview-text" id="interviewContent"></div>
+        </div>
+
+        <div class="back-link">
+            <a href="interview.html">← インタビュー一覧に戻る</a>
+        </div>
+    </article>
+</main>
+
+<footer class="commonFooter">
+    <div class="footer__cta">
+        <h2>幸せと価値を<br class="only-sp">世界にシェアしませんか?</h2>
+        <nav class="cta-main">
+            <a href="service.html">事業内容</a>
+            <a href="contact.html">お問い合わせ</a>
+        </nav>
+    </div>
+    <div class="footer__nav">
+        <nav class="footer-navlist"><div class="list-block02 is-2nd listcol">
+                <dl>
+                    <dt><a href="company.html">会社情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="company.html#overview">会社概要</a></li>
+                            <li><a href="company.html#message">代表挨拶</a></li>
+                            <li><a href="company.html#info">会社情報</a></li>
+                            <li><a href="company.html#history">沿革</a></li>
+                            <li><a href="company.html#access">アクセス</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block03 listcol">
+                <dl>
+                    <dt><a href="service.html">事業内容</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="service.html#sv">SV事業</a></li>
+                            <li><a href="service.html#ses">SES事業</a></li>
+                            <li><a href="service.html#promotion">セールスプロモーション事業</a></li>
+                            <li><a href="service.html#outsourcing">アウトソーシング事業</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block04 listcol">
+                <dl>
+                    <dt><a href="recruit.html">採用情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="recruit.html">募集職種</a></li>
+                            <li><a href="interview.html">社員インタビュー</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </nav>
+        <div class="footer__company-info">
+            <h3>合同会社SHARE</h3>
+            <p>〒110-0015 東京都台東区東上野６丁目２３−５ 第二雨宮ビル1002</p>
+            <p>TEL: 048-961-8663 | 代表携帯: 090-6684-7792 / 090-1828-5970</p>
+            <p>Email: info@share-llc.jp</p>
+        </div>
+        <div class="footer__links">
+            <a href="contact.html">お問い合わせ</a>
+            <span>|</span>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+    </div>
+    <div class="footer__logo">
+        <h2 style="font-size: 20vw; font-weight: 900; color: #333; letter-spacing: 0.05em; padding: 15px 0; margin: 0; width: 100%; text-align: center;">SHARE</h2>
+    </div>
+    <div class="copy">Copyright© 合同会社SHARE All Rights Reserved.</div>
+</footer>
+
+<script src="./js/header-subpages.js"></script>
+<script src="./js/interview-detail-loader.js"></script>
+
+<script src="./js/page-transition-loading.js"></script>
+
+<script src="./js/scroll-animations.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+/* Interview Section Styles */
+
+/* Interview Block Structure */
+.topInterview {
+    background: white !important;
+    position: relative;
+}
+
+/* Interview Content */
+.topInterview__inner {
+    position: relative;
+}
+
+/* Interview Title */
+.interview-message h2 {
+    font-size: 5rem !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 60px !important;
+}
+
+.interview-message h2 a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    text-decoration: none !important;
+    color: #252525 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.interview-message h2 a:hover {
+    opacity: 0.7 !important;
+}
+
+/* Circle Arrow Button */
+.interview-message .btn-arrows {
+    width: 78px !important;
+    height: 78px !important;
+    max-width: 78px !important;
+    max-height: 78px !important;
+}
+
+.interview-message .btn-arrows .cls-1 {
+    fill: none !important;
+    stroke: #252525 !important;
+    stroke-miterlimit: 10 !important;
+}
+
+.interview-message .btn-arrows .cls-2 {
+    fill: #252525 !important;
+}
+
+/* Interview Scroll Container */
+.interview-scroll {
+    overflow-x: auto !important;
+    margin: 0 -20px !important;
+    padding: 0 20px !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.interview-scroll::-webkit-scrollbar {
+    height: 8px !important;
+}
+
+.interview-scroll::-webkit-scrollbar-track {
+    background: #f8f8f8 !important;
+    border-radius: 4px !important;
+}
+
+.interview-scroll::-webkit-scrollbar-thumb {
+    background: #ddd !important;
+    border-radius: 4px !important;
+}
+
+.interview-scroll::-webkit-scrollbar-thumb:hover {
+    background: #ccc !important;
+}
+
+/* Interview Cards Layout */
+.interview-col {
+    display: flex !important;
+    gap: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    min-width: min-content !important;
+}
+
+.interview-col li {
+    flex: 0 0 320px !important;
+    background: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+.interview-col li:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.15) !important;
+}
+
+.interview-col a {
+    display: block !important;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Interview Image */
+.col-image {
+    position: relative !important;
+    overflow: hidden !important;
+    height: 320px !important;
+    background: #f8f8f8 !important;
+}
+
+.col-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+}
+
+.interview-col li:hover .col-image img {
+    transform: scale(1.05) !important;
+}
+
+/* Interview Content */
+.col-text {
+    padding: 25px !important;
+}
+
+.col-text .position {
+    display: inline-block !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #999 !important;
+    margin-bottom: 10px !important;
+}
+
+.col-text h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
+}
+
+.col-text .message {
+    font-size: 14px !important;
+    color: #666 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 20px !important;
+}
+
+.col-text .profile {
+    padding-top: 20px !important;
+    border-top: 1px solid #eee !important;
+}
+
+.profile-item {
+    display: flex !important;
+    margin-bottom: 10px !important;
+}
+
+.profile-item .label {
+    font-size: 12px !important;
+    color: #999 !important;
+    min-width: 60px !important;
+}
+
+.profile-item .value {
+    font-size: 14px !important;
+    color: #333 !important;
+    font-weight: 500 !important;
+}
+
+/* Read More Link */
+.read-more {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #007BFF !important;
+    text-decoration: none !important;
+    margin-top: 15px !important;
+    transition: all 0.3s ease !important;
+}
+
+.read-more:hover {
+    gap: 12px !important;
+    color: #0056b3 !important;
+}
+
+.read-more svg {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.read-more:hover svg {
+    transform: translateX(4px) !important;
+}
+
+/* Override conflicting SVG styles */
+.interview-message svg {
+    max-width: none !important;
+    max-height: none !important;
+    width: 78px !important;
+    height: 78px !important;
+    margin-left: 0 !important;
+    vertical-align: initial !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .interview-message h2 {
+        font-size: 32px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .interview-message .btn-arrows {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .interview-message svg {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .interview-col li {
+        flex: 0 0 280px !important;
+    }
+
+    .col-image {
+        height: 280px !important;
+    }
+
+    .col-text {
+        padding: 20px !important;
+    }
+
+    .col-text h3 {
+        font-size: 18px !important;
+    }
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 769px) {
+    .topInterview {
+        display: flex;
+    }
+
+    .topInterview .block-content {
+        padding: 80px 40px 100px 40px;
+        flex: 1;
+        border-left: 1px solid #e5e5e5;
+    }
+
+    .topInterview .block-label {
+        width: 100px !important;
+        padding: 80px 20px !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    .topInterview .block-label label {
+        transform: rotate(180deg);
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        color: #999 !important;
+        text-transform: uppercase;
+    }
+}

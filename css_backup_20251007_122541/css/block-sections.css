@@ -1,0 +1,112 @@
+/* Consistent Block Section Styles */
+
+/* Common block structure for all sections */
+.topBlock {
+    position: relative;
+    background: white;
+}
+
+/* Desktop layout with vertical label and border */
+@media (min-width: 769px) {
+    .topBlock {
+        display: flex;
+    }
+
+    .topBlock .block-label {
+        width: 100px !important;
+        padding: 80px 20px !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: none !important;
+        position: relative !important;
+    }
+
+    .topBlock .block-label label {
+        transform: rotate(180deg);
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        color: #999 !important;
+        text-transform: uppercase;
+    }
+
+    .topBlock .block-content {
+        flex: 1;
+        padding: 80px 40px 100px 40px !important;
+        border-left: 1px solid #e5e5e5 !important;
+    }
+
+    /* Alternating background colors */
+    .topBlock:nth-child(odd) {
+        background: #f8f8f8;
+    }
+
+    .topBlock:nth-child(even) {
+        background: white;
+    }
+
+    /* Special styling for specific sections */
+    .topAbout {
+        background: white !important;
+    }
+
+    .topNews {
+        background: white !important;
+    }
+
+    .topBusiness {
+        background: #f8f8f8 !important;
+    }
+
+    .topInterview {
+        background: white !important;
+    }
+
+    .topContact {
+        background: #333333 !important;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .topBlock .block-label {
+        writing-mode: initial !important;
+        text-orientation: initial !important;
+        padding: 20px !important;
+        text-align: center !important;
+        background: #f8f8f8 !important;
+        border-bottom: 1px solid #e5e5e5 !important;
+    }
+
+    .topBlock .block-label label {
+        transform: none !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        color: #999 !important;
+    }
+
+    .topBlock .block-content {
+        padding: 40px 20px 60px 20px !important;
+        border-left: none !important;
+    }
+}
+
+/* Ensure consistent heading styles */
+.topBlock h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #252525;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .topBlock h2 {
+        font-size: 2rem;
+    }
+}

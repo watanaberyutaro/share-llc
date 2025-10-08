@@ -1,0 +1,380 @@
+/* Hero Data Visualization Styles */
+
+.mv-visual {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-visualization {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate3d 20s infinite linear;
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+        transform: rotateY(180deg) rotateX(10deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(0deg);
+    }
+}
+
+/* Data Grid - Floating Nodes */
+.data-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.data-node {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #00ffff;
+    background: rgba(0, 255, 255, 0.05);
+    animation: float 6s infinite ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.data-node::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00ffff;
+    transform: scale(1.2);
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+.data-node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #00ffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px #00ffff;
+    animation: glow 2s infinite;
+}
+
+.data-node:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.data-node:nth-child(2) {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.5s;
+    border-color: #ff00ff;
+    background: rgba(255, 0, 255, 0.05);
+}
+
+.data-node:nth-child(2)::before {
+    border-color: #ff00ff;
+}
+
+.data-node:nth-child(2)::after {
+    background: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+.data-node:nth-child(3) {
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 1s;
+    border-color: #00ff00;
+    background: rgba(0, 255, 0, 0.05);
+}
+
+.data-node:nth-child(3)::before {
+    border-color: #00ff00;
+}
+
+.data-node:nth-child(3)::after {
+    background: #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.data-node:nth-child(4) {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.data-node:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 2s;
+    width: 100px;
+    height: 100px;
+}
+
+.data-node:nth-child(6) {
+    top: 60%;
+    right: 30%;
+    animation-delay: 2.5s;
+    border-color: #ffff00;
+    background: rgba(255, 255, 0, 0.05);
+}
+
+.data-node:nth-child(6)::before {
+    border-color: #ffff00;
+}
+
+.data-node:nth-child(6)::after {
+    background: #ffff00;
+    box-shadow: 0 0 20px #ffff00;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateZ(0);
+    }
+    50% {
+        transform: translateY(-20px) translateZ(50px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Data Flow Lines */
+.data-flow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flow-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: flow 3s infinite linear;
+}
+
+.flow-line:nth-child(1) {
+    top: 25%;
+    width: 300px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.flow-line:nth-child(2) {
+    top: 50%;
+    width: 250px;
+    right: -100px;
+    animation-delay: 1s;
+    background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+    animation-direction: reverse;
+}
+
+.flow-line:nth-child(3) {
+    top: 75%;
+    width: 350px;
+    left: -100px;
+    animation-delay: 2s;
+    background: linear-gradient(90deg, transparent, #00ff00, transparent);
+}
+
+@keyframes flow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+/* Hologram Text */
+.hologram-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.glitch {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #00ffff;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+    animation: glitch 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ff00ff;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: #00ff00;
+    z-index: -2;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        text-shadow:
+            0 0 10px #00ffff,
+            0 0 20px #00ffff,
+            0 0 30px #00ffff;
+    }
+    50% {
+        text-shadow:
+            0 0 15px #00ffff,
+            0 0 30px #00ffff,
+            0 0 45px #00ffff;
+    }
+}
+
+@keyframes glitch-1 {
+    0%, 100% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+    20% {
+        clip-path: inset(20% 0 30% 0);
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        clip-path: inset(50% 0 20% 0);
+        transform: translate(2px, -2px);
+    }
+    60% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(-1px, 1px);
+    }
+    80% {
+        clip-path: inset(70% 0 10% 0);
+        transform: translate(1px, -1px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 100% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+    20% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(2px, -1px);
+    }
+    40% {
+        clip-path: inset(20% 0 50% 0);
+        transform: translate(-2px, 1px);
+    }
+    60% {
+        clip-path: inset(30% 0 40% 0);
+        transform: translate(1px, -2px);
+    }
+    80% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-1px, 2px);
+    }
+}
+
+.subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    animation: fade 2s infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .topMv h2 {
+        font-size: 42px !important;
+    }
+
+    .mv-visual {
+        margin-top: 40px;
+        height: 350px;
+    }
+
+    .data-visualization {
+        transform: scale(0.8);
+    }
+
+    .glitch {
+        font-size: 36px;
+    }
+
+    .data-node {
+        width: 60px;
+        height: 60px;
+    }
+
+    .data-node:nth-child(5) {
+        width: 80px;
+        height: 80px;
+    }
+}

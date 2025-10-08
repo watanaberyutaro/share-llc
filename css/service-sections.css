@@ -1,0 +1,258 @@
+/* Service Page Sections - Unified Design */
+
+/* Service Section Layout */
+.service-section {
+    background: white;
+    display: flex;
+}
+
+.service-section .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.service-section .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.service-section .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.service-section h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.service-section .section-subtitle {
+    font-size: 16px;
+    color: #636363;
+    line-height: 1.9;
+    margin-bottom: 60px;
+}
+
+/* Service Content */
+.service-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.service-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    flex: 0 0 450px;
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #e0e0e0;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 25px;
+}
+
+.service-text p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+/* Service Features */
+.service-features {
+    margin-top: 60px;
+}
+
+.service-features h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    padding: 30px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+}
+
+.feature-item h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* Service Benefits */
+.service-benefits {
+    background: #252525;
+    color: white;
+    padding: 50px 40px;
+    margin-top: 60px;
+    border: 1px solid #252525;
+}
+
+.service-benefits h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.benefit-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.benefit-icon {
+    flex: 0 0 40px;
+    height: 40px;
+    background: white;
+    color: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #252525;
+}
+
+.benefit-text {
+    flex: 1;
+}
+
+.benefit-text h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.benefit-text p {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-section {
+        flex-direction: column;
+    }
+
+    .service-section .block-label {
+        width: 100%;
+        padding: 20px;
+        writing-mode: horizontal-tb;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .service-section .block-label label {
+        transform: none;
+    }
+
+    .service-section .block-content {
+        padding: 60px 20px;
+    }
+
+    .service-section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .service-section .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .service-content,
+    .service-content.reverse {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .service-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .service-text h3 {
+        font-size: 20px;
+    }
+
+    .service-text p {
+        font-size: 14px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 25px 20px;
+    }
+
+    .service-benefits {
+        padding: 40px 20px;
+    }
+
+    .benefit-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}

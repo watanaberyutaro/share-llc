@@ -1,0 +1,294 @@
+/* About Section Styles */
+
+/* About Block Structure */
+.topAbout {
+    background: white !important;
+    position: relative;
+}
+
+/* About Content */
+.topAbout__inner {
+    position: relative;
+}
+
+/* About Title */
+.about-message h2 {
+    font-size: 5rem !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 40px !important;
+}
+
+.about-message h2 a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    text-decoration: none !important;
+    color: #252525 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.about-message h2 a:hover {
+    opacity: 0.7 !important;
+}
+
+/* Circle Arrow Button */
+.about-message .btn-arrows {
+    width: 78px !important;
+    height: 78px !important;
+    max-width: 78px !important;
+    max-height: 78px !important;
+}
+
+.about-message .btn-arrows .cls-1 {
+    fill: none !important;
+    stroke: #252525 !important;
+    stroke-miterlimit: 10 !important;
+}
+
+.about-message .btn-arrows .cls-2 {
+    fill: #252525 !important;
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex !important;
+    gap: 60px !important;
+    align-items: flex-start !important;
+}
+
+/* About Text Content */
+.about-text {
+    flex: 1 !important;
+}
+
+.about-text .lead {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 30px !important;
+}
+
+.about-text p {
+    font-size: 16px !important;
+    color: #666 !important;
+    line-height: 2 !important;
+    margin-bottom: 25px !important;
+}
+
+/* Company Values List */
+.values-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 40px 0 !important;
+}
+
+.values-list li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+    margin-bottom: 20px !important;
+    padding-left: 30px !important;
+    position: relative !important;
+}
+
+.values-list li::before {
+    content: "✓" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #28a745 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+.values-list strong {
+    font-weight: 700 !important;
+    color: #252525 !important;
+    margin-right: 10px !important;
+}
+
+/* About Image */
+.about-image {
+    width: 500px !important;
+    flex-shrink: 0 !important;
+}
+
+.about-image img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+}
+
+/* Company Info Box */
+.company-info {
+    background: #f8f8f8 !important;
+    border-radius: 12px !important;
+    padding: 40px !important;
+    margin-top: 50px !important;
+}
+
+.company-info h3 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 2px solid #007BFF !important;
+}
+
+.info-table {
+    width: 100% !important;
+}
+
+.info-table tr {
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.info-table tr:last-child {
+    border-bottom: none !important;
+}
+
+.info-table th,
+.info-table td {
+    padding: 15px 0 !important;
+    vertical-align: top !important;
+}
+
+.info-table th {
+    width: 150px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #666 !important;
+    text-align: left !important;
+}
+
+.info-table td {
+    font-size: 15px !important;
+    color: #333 !important;
+    line-height: 1.8 !important;
+}
+
+/* Mission Statement */
+.mission-statement {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 40px !important;
+    margin-top: 40px !important;
+    text-align: center !important;
+}
+
+.mission-statement h3 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+}
+
+.mission-statement p {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    margin: 0 !important;
+}
+
+/* Override conflicting SVG styles */
+.about-message svg {
+    max-width: none !important;
+    max-height: none !important;
+    width: 78px !important;
+    height: 78px !important;
+    margin-left: 0 !important;
+    vertical-align: initial !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .about-message h2 {
+        font-size: 32px !important;
+    }
+
+    .about-message .btn-arrows {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .about-message svg {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .about-content {
+        flex-direction: column !important;
+    }
+
+    .about-image {
+        width: 100% !important;
+    }
+
+    .about-text .lead {
+        font-size: 18px !important;
+    }
+
+    .company-info {
+        padding: 30px 20px !important;
+    }
+
+    .info-table th {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 5px !important;
+    }
+
+    .info-table td {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .mission-statement {
+        padding: 30px 20px !important;
+    }
+
+    .mission-statement h3 {
+        font-size: 22px !important;
+    }
+
+    .mission-statement p {
+        font-size: 16px !important;
+    }
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 769px) {
+    .topAbout {
+        display: flex;
+    }
+
+    .topAbout .block-content {
+        padding: 80px 40px 100px 40px;
+        flex: 1;
+        border-left: 1px solid #e5e5e5;
+    }
+
+    .topAbout .block-label {
+        width: 100px !important;
+        padding: 80px 20px !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    .topAbout .block-label label {
+        transform: rotate(180deg);
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        color: #999 !important;
+        text-transform: uppercase;
+    }
+}

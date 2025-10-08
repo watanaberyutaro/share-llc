@@ -1,0 +1,142 @@
+/*!
+ * CSS Index for Life Design Recruit Website
+ * Import all stylesheets in the correct order
+ *
+ * Usage: Include this single file in your HTML:
+ * <link rel="stylesheet" href="./css/index.css">
+ */
+
+/* ========================================
+   LOAD ORDER:
+   1. Fonts (typography foundation)
+   2. Main styles (reset, normalize, base)
+   3. Components (blocks, widgets)
+   4. Icons (UI elements)
+   ======================================== */
+
+/* Typography and Font Declarations */
+@import url('./fonts.css');
+
+/* Base styles, reset, normalize, and utilities */
+@import url('./main.css');
+
+/* WordPress blocks and component styles */
+@import url('./components.css');
+
+/* Icon styles and Font Awesome utilities */
+@import url('./icons.css');
+
+/* ========================================
+   SITE-SPECIFIC CUSTOMIZATIONS
+   ======================================== */
+
+/* Add any site-specific overrides here */
+
+/* Japanese site optimizations */
+html:lang(ja) {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+}
+
+/* Performance optimization */
+* {
+    box-sizing: border-box;
+}
+
+/* Focus management for better accessibility */
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+    outline: none;
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Site-specific header adjustments */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content area */
+.site-main {
+    min-height: calc(100vh - 200px);
+}
+
+/* Footer styles */
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* ========================================
+   RESPONSIVE ENHANCEMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .site-header {
+        position: relative;
+    }
+
+    .site-main {
+        min-height: auto;
+    }
+}
+
+/* ========================================
+   PRINT OPTIMIZATIONS
+   ======================================== */
+
+@media print {
+    .site-header,
+    .site-footer,
+    .sidebar {
+        display: none;
+    }
+
+    .site-main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (Optional)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #ffffff;
+        --border-color: #333333;
+    }
+
+    /* Uncomment to enable dark mode */
+    /*
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .site-header {
+        background-color: #222222;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .site-footer {
+        background-color: #222222;
+    }
+    */
+}

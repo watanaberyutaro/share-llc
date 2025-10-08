@@ -1,0 +1,922 @@
+/* Recruit Page Sections - Index Page Style */
+
+/* Prevent horizontal overflow */
+body.page-subpage {
+    overflow-x: hidden !important;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+/* Message Section - Block Style */
+.recruit-message {
+    background: white;
+    display: flex;
+}
+
+.recruit-message .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-message .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-message .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-message h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.recruit-message p {
+    font-size: 16px;
+    color: #636363;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+/* Values Section - Block Style */
+.recruit-values {
+    background: white;
+    display: flex;
+}
+
+.recruit-values .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-values .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-values .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-values h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 100%;
+}
+
+.value-item {
+    border: 1px solid #e0e0e0;
+    padding: 40px 30px;
+    transition: border-color 0.3s ease;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.value-item:hover {
+    border-color: #252525;
+}
+
+.value-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.value-item p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* Benefits Section - Block Style */
+.recruit-benefits {
+    background: white;
+    display: flex;
+}
+
+.recruit-benefits .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-benefits .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-benefits .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-benefits h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 100%;
+}
+
+.benefit-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    transition: border-color 0.3s ease;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.benefit-card:hover {
+    border-color: #252525;
+}
+
+.benefit-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* Positions Section - Block Style */
+.recruit-positions {
+    background: white;
+    display: flex;
+}
+
+.recruit-positions .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-positions .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-positions .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-positions h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.position-card {
+    background: white;
+    border: 1px solid #252525;
+    padding: 40px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.position-header {
+    margin-bottom: 30px;
+}
+
+.position-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.position-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.position-tag {
+    padding: 6px 12px;
+    border: 1px solid #252525;
+    color: #252525;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.position-details {
+    margin-bottom: 0;
+}
+
+.detail-row {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    flex: 0 0 150px;
+    font-weight: 700;
+    color: #252525;
+    font-size: 14px;
+}
+
+.detail-content {
+    flex: 1;
+    color: #636363;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* Process Section - Block Style */
+.recruit-process {
+    background: white;
+    display: flex;
+}
+
+.recruit-process .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-process .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-process .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-process h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.process-steps {
+    position: relative;
+}
+
+.process-step {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.step-number {
+    flex: 0 0 60px;
+    height: 60px;
+    border: 1px solid #252525;
+    color: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.step-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.step-content p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* FAQ Section - Block Style */
+.recruit-faq {
+    background: white;
+    display: flex;
+}
+
+.recruit-faq .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-faq .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-faq .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.recruit-faq h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* CTA Section */
+.recruit-cta {
+    background: white;
+    padding: 120px 40px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.recruit-cta h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.recruit-cta p {
+    font-size: 18px;
+    color: #636363;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.cta-button.primary {
+    background: #252525;
+    color: #ffffff;
+    border: 1px solid #252525;
+}
+
+.cta-button.primary:hover {
+    background: #ffffff;
+    color: #252525;
+}
+
+.cta-button.secondary {
+    background: #ffffff;
+    color: #252525;
+    border: 1px solid #252525;
+}
+
+.cta-button.secondary:hover {
+    background: #252525;
+    color: #ffffff;
+}
+
+/* Recruit Interview Section */
+.recruit-interview-section {
+    background: white;
+    display: flex;
+}
+
+.recruit-interview-section .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-interview-section .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-interview-section .block-content {
+    flex: 1;
+    padding: 80px 0 100px 0;
+    max-width: 100%;
+}
+
+.recruit-interview-section h2 {
+    font-size: clamp(32px, 5vw, 5rem);
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    padding: 0 40px;
+}
+
+.recruit-interview-section h2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #252525;
+    transition: opacity 0.3s ease;
+}
+
+.recruit-interview-section h2 a:hover {
+    opacity: 0.7;
+}
+
+.recruit-interview-section .btn-arrows {
+    width: 78px;
+    height: 78px;
+}
+
+.recruit-interview-section .btn-arrows .cls-1 {
+    fill: none;
+    stroke: #252525;
+    stroke-miterlimit: 10;
+}
+
+.recruit-interview-section .btn-arrows .cls-2 {
+    fill: #252525;
+}
+
+/* Interview Slider */
+.recruit-interview-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.recruit-interview-scroll {
+    width: 100%;
+    overflow: hidden;
+}
+
+.recruit-interview-col {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: min-content;
+}
+
+.recruit-interview-col .col {
+    flex: 0 0 380px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.recruit-interview-col .col:hover {
+    border-color: #252525;
+}
+
+.recruit-interview-col .col-staff {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+.recruit-interview-col .staff-portrait {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.recruit-interview-col .staff-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recruit-interview-col .col-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.recruit-interview-col .col-bg .bg-thumb01 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+}
+
+.recruit-interview-col .col-text {
+    padding: 30px;
+    border-top: 1px solid #e0e0e0;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recruit-interview-col .col-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.recruit-interview-col .text-labels {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.recruit-interview-col .text-labels .label {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f0f0f0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #636363;
+}
+
+.recruit-interview-col .text-excerpt {
+    font-size: 14px;
+    color: #636363;
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+
+.recruit-interview-col .text-position {
+    margin-bottom: 12px;
+}
+
+.recruit-interview-col .text-position .role {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #252525;
+    font-size: 12px;
+    font-weight: 700;
+    color: #252525;
+}
+
+.recruit-interview-col .text-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: auto;
+}
+
+.recruit-interview-col .text-name .name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #252525;
+}
+
+.recruit-interview-col .text-name .submit {
+    font-size: 13px;
+    color: #636363;
+}
+
+/* Interview Navigation Buttons */
+.recruit-interview-nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 40px;
+}
+
+.recruit-interview-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #252525;
+    background: white;
+    color: #252525;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.recruit-interview-btn:hover {
+    background: #252525;
+    color: white;
+}
+
+.recruit-interview-btn:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .recruit-message,
+    .recruit-values,
+    .recruit-benefits,
+    .recruit-positions,
+    .recruit-process,
+    .recruit-faq,
+    .recruit-interview-section {
+        flex-direction: column;
+    }
+
+    .recruit-message .block-label,
+    .recruit-values .block-label,
+    .recruit-benefits .block-label,
+    .recruit-positions .block-label,
+    .recruit-process .block-label,
+    .recruit-faq .block-label,
+    .recruit-interview-section .block-label {
+        width: 100%;
+        padding: 20px;
+        writing-mode: horizontal-tb;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .recruit-message .block-label label,
+    .recruit-values .block-label label,
+    .recruit-benefits .block-label label,
+    .recruit-positions .block-label label,
+    .recruit-process .block-label label,
+    .recruit-faq .block-label label,
+    .recruit-interview-section .block-label label {
+        transform: none;
+    }
+
+    .recruit-message .block-content,
+    .recruit-values .block-content,
+    .recruit-benefits .block-content,
+    .recruit-positions .block-content,
+    .recruit-process .block-content,
+    .recruit-faq .block-content {
+        padding: 60px 20px;
+    }
+
+    .recruit-interview-section .block-content {
+        padding: 60px 0;
+    }
+
+    .recruit-interview-section h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .recruit-interview-section .btn-arrows {
+        width: 50px;
+        height: 50px;
+    }
+
+    .recruit-interview-slider {
+        padding: 0 20px;
+    }
+
+    .recruit-interview-col .col {
+        flex: 0 0 320px;
+    }
+
+    .recruit-interview-nav {
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+
+    .recruit-interview-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .recruit-message h2,
+    .recruit-values h2,
+    .recruit-benefits h2,
+    .recruit-positions h2,
+    .recruit-process h2,
+    .recruit-faq h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .position-card {
+        padding: 30px 20px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .detail-label {
+        flex: none;
+    }
+
+    .process-step {
+        gap: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    .step-number {
+        flex: 0 0 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .recruit-cta {
+        padding: 80px 20px;
+    }
+
+    .recruit-cta h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .recruit-cta p {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-button {
+        width: 100%;
+        min-width: auto;
+        padding: 18px 30px;
+        font-size: 15px;
+    }
+}

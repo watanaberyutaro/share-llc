@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <title>採用情報 | 合同会社SHARE</title>
+    <link href="./assets/img/icons/favicon.ico" rel="shortcut icon">
+    <link href="./assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="合同会社SHAREの採用情報。一緒に幸せと価値を世界にシェアする仲間を募集しています。">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Adobe Typekit Fonts -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'vnh5qvp',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style-complete.css">
+    <link rel="stylesheet" href="./css/block-sections.css">
+    <link rel="stylesheet" href="./css/header-sticky.css">
+    <link rel="stylesheet" href="./css/header-always-visible.css">
+
+    <!-- Footer Fix -->
+    <link rel="stylesheet" href="./css/footer-fix.css">
+    <link rel="stylesheet" href="./css/page-hero-3d.css">
+    <link rel="stylesheet" href="./css/footer-custom.css">
+
+    <style>
+        .tk-proxima-nova{font-family:"proxima-nova",sans-serif;}
+        .tk-ryo-gothic-plusn{font-family:"ryo-gothic-plusn",sans-serif;}
+        .tk-acumin-pro{font-family:"acumin-pro",sans-serif;}
+        .tk-fot-tsukuardgothic-std{font-family:"fot-tsukuardgothic-std",sans-serif;}
+
+        /* Page Hero */
+        .recruit-hero {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .recruit-hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .recruit-hero p {
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .recruit-hero-cta {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: #333;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .recruit-hero-cta:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        /* Message Section */
+        .recruit-message {
+            padding: 100px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .recruit-message h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .recruit-message p {
+            font-size: 18px;
+            color: #666;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        /* Values Section */
+        .recruit-values {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .recruit-values h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 100px;
+            height: 100px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin: 0 auto 30px;
+        }
+
+        .value-item h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .value-item p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Benefits Section */
+        .recruit-benefits {
+            padding: 100px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .recruit-benefits h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 40px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .benefit-card h3 i {
+            color: #333;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Positions Section */
+        .recruit-positions {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .recruit-positions h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .positions-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .position-card {
+            background: white;
+            padding: 50px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border-left: 6px solid #333;
+        }
+
+        .position-header {
+            margin-bottom: 30px;
+        }
+
+        .position-header h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .position-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .position-tag {
+            padding: 6px 16px;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 14px;
+            border-radius: 20px;
+        }
+
+        .position-details {
+            margin-bottom: 30px;
+        }
+
+        .detail-row {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            flex: 0 0 150px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .detail-content {
+            flex: 1;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Process Section */
+        .recruit-process {
+            padding: 100px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .recruit-process h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .process-steps {
+            position: relative;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .step-number {
+            flex: 0 0 80px;
+            height: 80px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* FAQ Section */
+        .recruit-faq {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .recruit-faq h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            flex: 0 0 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            padding: 0 30px 30px 90px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .recruit-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+        }
+
+        .recruit-cta h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .recruit-cta p {
+            font-size: 18px;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 20px 60px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: #333;
+        }
+
+        .cta-button.primary:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .recruit-hero h1 {
+                font-size: 36px;
+            }
+
+            .recruit-hero p {
+                font-size: 16px;
+            }
+
+            .recruit-message h2,
+            .recruit-values h2,
+            .recruit-benefits h2,
+            .recruit-positions h2,
+            .recruit-process h2,
+            .recruit-faq h2,
+            .recruit-cta h2 {
+                font-size: 28px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .position-card {
+                padding: 30px 20px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .process-step {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .step-number {
+                flex: 0 0 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/header-subpages.css">
+</head>
+<body class="page-subpage">
+
+<header class="commonHeader">
+    <div class="commonHeader__inner">
+        <h1 class="header-ttl">
+            <a href="index.html"><span style="font-size: 28px; font-weight: 900; color: #333333; letter-spacing: 0.05em;">SHARE</span></a>
+        </h1>
+        <nav class="header-nav">
+            <a href="index.html">HOME</a>
+            <a href="company.html">COMPANY</a>
+            <a href="service.html">SERVICES</a>
+            <a href="interview.html">INTERVIEW</a>
+            <a href="news.html">NEWS</a>
+            <a href="recruit.html">RECRUIT</a>
+            <a href="contact.html" class="btn-header"><span>CONTACT</span></a>
+        </nav>
+        <button class="navToggle" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<main>
+    <section class="recruit-hero">
+        <canvas id="hero-3d-canvas"></canvas>
+        <h1>幸せと価値を、共にシェアしませんか?</h1>
+        <p>私たちSHAREは、一人ひとりの可能性を信じ、共に成長し、<br>より良い未来を創造する仲間を探しています。</p>
+        <a href="#positions" class="recruit-hero-cta">募集職種を見る</a>
+    </section>
+
+    <section class="recruit-message">
+        <h2>あなたの「やりたい」を、実現できる場所</h2>
+        <p>SHAREでは、年齢や経験に関係なく、すべての社員に挑戦の機会があります。新しいアイデアを歓迎し、失敗を恐れずチャレンジできる環境があります。</p>
+        <p>通信事業、SES事業、セールスプロモーション、アウトソーシングという多様な事業領域で、あなたの強みを活かし、キャリアを築くことができます。</p>
+        <p>私たちが大切にしているのは、お客様の笑顔と社員の幸せ。仕事を通じて成長し、やりがいを感じながら、充実した毎日を過ごせる――そんな環境を提供しています。</p>
+        <p>あなたの「こんな仕事がしたい」「こんな自分になりたい」という想いを、SHAREで実現しませんか?</p>
+    </section>
+
+    <section class="recruit-values">
+        <h2>SHAREが大切にする3つの価値観</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <h3>幸せをシェアする</h3>
+                <p>お客様、パートナー企業、そして社員が幸せであること。それが私たちの最大の目標です。一人ひとりが笑顔で働き、周りの人々にも幸せを届けることを大切にしています。</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>挑戦を楽しむ</h3>
+                <p>新しいことに挑戦し、失敗から学び、成長する。そのプロセスを楽しむことが、イノベーションと成果を生み出します。挑戦する人を全力でサポートします。</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>価値を創造する</h3>
+                <p>既存の枠にとらわれず、常に新しい価値を生み出すこと。お客様のビジネス成長に貢献し、社会により良い影響を与えることを目指しています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="recruit-benefits">
+        <h2>働きやすい環境と充実の福利厚生</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3><i class="fas fa-briefcase"></i>キャリア開発支援</h3>
+                <p>定期的な1on1面談で、一人ひとりのキャリアプランをサポート。社内外の研修制度や資格取得支援制度も充実しており、スキルアップを全面的にバックアップします。</p>
+            </div>
+            <div class="benefit-card">
+                <h3><i class="fas fa-balance-scale"></i>ワークライフバランス</h3>
+                <p>フレックスタイム制度やリモートワーク制度を導入し、柔軟な働き方が可能です。残業時間の削減にも積極的に取り組み、プライベートも充実させられる環境を整えています。</p>
+            </div>
+            <div class="benefit-card">
+                <h3><i class="fas fa-users"></i>チームワーク重視</h3>
+                <p>部署や事業部を超えた交流を大切にし、定期的な社内イベントや懇親会を開催。オープンなコミュニケーションを通じて、互いに高め合える関係性を築いています。</p>
+            </div>
+            <div class="benefit-card">
+                <h3><i class="fas fa-chart-line"></i>成果に応じた評価</h3>
+                <p>年齢や勤続年数ではなく、成果と貢献度を正当に評価する人事制度。頑張りがしっかりと報酬に反映され、キャリアアップのチャンスが平等に与えられます。</p>
+            </div>
+            <div class="benefit-card">
+                <h3><i class="fas fa-graduation-cap"></i>充実の研修制度</h3>
+                <p>新入社員研修、OJT、スキル別研修、マネジメント研修など、成長段階に応じた研修プログラムを用意。外部セミナーへの参加支援や、書籍購入補助制度もあります。</p>
+            </div>
+            <div class="benefit-card">
+                <h3><i class="fas fa-heart"></i>充実の福利厚生</h3>
+                <p>各種社会保険完備、交通費全額支給、住宅手当、家族手当、慶弔見舞金制度、健康診断、インフルエンザ予防接種補助など、安心して働ける環境を提供します。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="positions" class="recruit-positions">
+        <h2>募集職種</h2>
+        <div class="positions-container">
+            <div class="position-card">
+                <div class="position-header">
+                    <h3>スーパーバイザー(SV)</h3>
+                    <div class="position-tags">
+                        <span class="position-tag">新卒</span>
+                        <span class="position-tag">中途</span>
+                        <span class="position-tag">未経験歓迎</span>
+                    </div>
+                </div>
+                <div class="position-details">
+                    <div class="detail-row">
+                        <div class="detail-label">仕事内容</div>
+                        <div class="detail-content">
+                            モバイルショップの運営支援業務全般。店舗スタッフの教育・育成、売上分析、キャンペーン企画・実施、店舗巡回、本部との連携などを担当いただきます。複数店舗を担当し、エリア全体の売上向上を目指します。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">必要なスキル</div>
+                        <div class="detail-content">
+                            コミュニケーション能力、問題解決能力、データ分析力。販売経験や店舗運営経験があれば尚可ですが、未経験からでもチャレンジ可能です。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">勤務地</div>
+                        <div class="detail-content">埼玉県越谷市(本社) / 東京都内各エリア / 関東圏の各店舗</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">給与</div>
+                        <div class="detail-content">月給25万円〜40万円(経験・スキルに応じて優遇) + 各種手当 + 賞与年2回</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <h3>システムエンジニア(SE)</h3>
+                    <div class="position-tags">
+                        <span class="position-tag">新卒</span>
+                        <span class="position-tag">中途</span>
+                        <span class="position-tag">経験者優遇</span>
+                    </div>
+                </div>
+                <div class="position-details">
+                    <div class="detail-row">
+                        <div class="detail-label">仕事内容</div>
+                        <div class="detail-content">
+                            Webアプリケーション開発、業務システム開発、インフラ構築などのプロジェクトに参画。要件定義から設計・開発・テスト・運用保守まで、幅広い工程を経験できます。クライアント先での常駐開発や自社内での受託開発があります。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">必要なスキル</div>
+                        <div class="detail-content">
+                            Java、PHP、Python、JavaScript等のプログラミング経験。未経験の方は基礎的なプログラミング知識があれば、研修でしっかりサポートします。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">勤務地</div>
+                        <div class="detail-content">埼玉県越谷市(本社) / 東京都内のクライアント先 / リモートワーク併用可</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">給与</div>
+                        <div class="detail-content">月給28万円〜50万円(経験・スキルに応じて優遇) + 各種手当 + 賞与年2回</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <h3>営業職(セールスプロモーション)</h3>
+                    <div class="position-tags">
+                        <span class="position-tag">新卒</span>
+                        <span class="position-tag">中途</span>
+                        <span class="position-tag">未経験歓迎</span>
+                    </div>
+                </div>
+                <div class="position-details">
+                    <div class="detail-row">
+                        <div class="detail-label">仕事内容</div>
+                        <div class="detail-content">
+                            通信商材の販売代理業務、イベントブースでの販売促進、法人営業など。お客様のニーズをヒアリングし、最適な商品・サービスを提案します。チーム単位で売上目標を達成し、インセンティブも豊富にあります。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">必要なスキル</div>
+                        <div class="detail-content">
+                            コミュニケーション能力、提案力、行動力。営業経験があれば尚可ですが、未経験でも熱意とやる気があれば大歓迎です。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">勤務地</div>
+                        <div class="detail-content">埼玉県越谷市(本社) / 関東圏の各イベント会場・商業施設</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">給与</div>
+                        <div class="detail-content">月給24万円〜35万円 + インセンティブ + 各種手当 + 賞与年2回</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <h3>人材コンサルタント(アウトソーシング)</h3>
+                    <div class="position-tags">
+                        <span class="position-tag">中途</span>
+                        <span class="position-tag">経験者優遇</span>
+                    </div>
+                </div>
+                <div class="position-details">
+                    <div class="detail-row">
+                        <div class="detail-label">仕事内容</div>
+                        <div class="detail-content">
+                            企業の人材ニーズのヒアリング、求職者のキャリアカウンセリング、最適なマッチング提案を行います。企業と求職者の双方にとって最良の結果を実現することがミッションです。再就職支援や人材派遣のコーディネートも担当します。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">必要なスキル</div>
+                        <div class="detail-content">
+                            人材業界での経験、コミュニケーション能力、課題解決能力。キャリアコンサルタントの資格があれば尚可です。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">勤務地</div>
+                        <div class="detail-content">埼玉県越谷市(本社) / 東京都内</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">給与</div>
+                        <div class="detail-content">月給28万円〜45万円(経験・スキルに応じて優遇) + 各種手当 + 賞与年2回</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <h3>総務・事務スタッフ</h3>
+                    <div class="position-tags">
+                        <span class="position-tag">新卒</span>
+                        <span class="position-tag">中途</span>
+                        <span class="position-tag">未経験歓迎</span>
+                    </div>
+                </div>
+                <div class="position-details">
+                    <div class="detail-row">
+                        <div class="detail-label">仕事内容</div>
+                        <div class="detail-content">
+                            総務業務全般、経理補助、人事・採用サポート、オフィス管理など。会社全体を支えるバックオフィス業務を担当いただきます。社員が働きやすい環境づくりに貢献できるポジションです。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">必要なスキル</div>
+                        <div class="detail-content">
+                            基本的なPCスキル(Word、Excel)、コミュニケーション能力、正確な事務処理能力。事務経験があれば尚可です。
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">勤務地</div>
+                        <div class="detail-content">埼玉県越谷市(本社)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">給与</div>
+                        <div class="detail-content">月給22万円〜30万円(経験・スキルに応じて優遇) + 各種手当 + 賞与年2回</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recruit-process">
+        <h2>選考プロセス</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>エントリー</h3>
+                    <p>下記の応募フォームまたはお電話にてエントリーください。履歴書・職務経歴書をご提出いただきます。書類選考の結果は1週間以内にご連絡いたします。</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>一次面接</h3>
+                    <p>人事担当者との面接を行います。これまでのご経験、志望動機、キャリアプランなどについてお聞かせください。SHAREについてもご説明し、疑問点にもお答えします。(所要時間:約60分)</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>二次面接</h3>
+                    <p>配属予定部署の責任者との面接を実施します。より具体的な業務内容、働き方、チーム体制などについてお話しします。あなたのスキルや適性を詳しく確認させていただきます。(所要時間:約60分)</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>最終面接</h3>
+                    <p>代表または役員との最終面接を行います。SHAREの理念や今後のビジョンについてお話しし、あなたがSHAREでどのように活躍したいかをお聞かせください。(所要時間:約45分)</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h3>内定・入社</h3>
+                    <p>内定通知をお送りします。入社条件、入社日などを相談の上、決定いたします。入社前にオフィス見学や懇親会を開催し、スムーズに入社できるようサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recruit-faq">
+        <h2>よくあるご質問</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">未経験でも応募できますか?</div>
+                <div class="faq-answer">はい、ほとんどの職種で未経験の方も歓迎しています。充実した研修制度とOJTにより、未経験からでも活躍できるようサポートします。熱意とやる気を最も重視していますので、ぜひご応募ください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">研修制度はありますか?</div>
+                <div class="faq-answer">新入社員研修、職種別研修、スキルアップ研修など、各種研修制度を用意しています。また、外部セミナーへの参加支援や資格取得支援制度もあり、継続的にスキルアップできる環境を整えています。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">転勤はありますか?</div>
+                <div class="faq-answer">基本的には転勤はありません。ただし、職種やキャリアプランによっては、ご本人の希望と適性を考慮した上で、他拠点への異動をご相談する場合があります。その際も事前に十分な説明を行います。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">残業はどのくらいありますか?</div>
+                <div class="faq-answer">職種や時期によって異なりますが、平均すると月20時間程度です。ワークライフバランスを重視しており、残業時間の削減に積極的に取り組んでいます。フレックスタイム制度も導入しており、柔軟な働き方が可能です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">リモートワークは可能ですか?</div>
+                <div class="faq-answer">職種や業務内容によりますが、SES事業部や総務部門などではリモートワークを導入しています。週2〜3日のリモートワークや、フルリモートでの勤務も可能です。ライフスタイルに合わせた働き方を相談できます。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">評価制度について教えてください</div>
+                <div class="faq-answer">年2回の人事評価を実施しています。目標管理制度(MBO)に基づき、定量・定性の両面から公正に評価します。評価結果は昇給や賞与に反映されるほか、キャリアアップの機会も提供しています。定期的な1on1面談でフィードバックも行います。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">社内の雰囲気はどうですか?</div>
+                <div class="faq-answer">風通しの良いフラットな組織で、部署や役職を超えたコミュニケーションが活発です。若手社員も積極的に意見を発言でき、新しいアイデアが歓迎される文化があります。定期的な社内イベントや懇親会もあり、和気あいあいとした雰囲気です。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">キャリアアップの機会はありますか?</div>
+                <div class="faq-answer">年齢や勤続年数に関わらず、成果と能力に応じてキャリアアップできる制度があります。実際に入社1〜2年でリーダーやマネージャーに昇格した事例も多数あります。また、他部署へのチャレンジや新規事業への参画など、幅広いキャリアパスを用意しています。</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recruit-cta">
+        <h2>私たちと一緒に、新しい価値を創造しませんか?</h2>
+        <p>あなたのチャレンジをお待ちしています。<br>まずはお気軽にお問い合わせください。</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="cta-button primary">エントリーする</a>
+            <a href="interview.html" class="cta-button secondary">社員インタビューを見る</a>
+        </div>
+    </section>
+</main>
+
+<footer class="commonFooter">
+    <div class="footer__cta">
+        <h2>幸せと価値を<br class="only-sp">世界にシェアしませんか?</h2>
+        <nav class="cta-main">
+            <a href="service.html">事業内容</a>
+            <a href="contact.html">お問い合わせ</a>
+        </nav>
+    </div>
+    <div class="footer__nav">
+        <nav class="footer-navlist">
+            <div class="list-block01 is-first listcol">
+                <ul>
+                    <li><a href="index.html" class="is-parent">ホーム</a></li>
+                </ul>
+            </div>
+            <div class="list-block02 is-2nd listcol">
+                <dl>
+                    <dt><a href="company.html">会社情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="company.html#overview">会社概要</a></li>
+                            <li><a href="company.html#message">代表挨拶</a></li>
+                            <li><a href="company.html#info">会社情報</a></li>
+                            <li><a href="company.html#history">沿革</a></li>
+                            <li><a href="company.html#access">アクセス</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block03 listcol">
+                <dl>
+                    <dt><a href="service.html">事業内容</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="service.html#sv">SV事業</a></li>
+                            <li><a href="service.html#ses">SES事業</a></li>
+                            <li><a href="service.html#promotion">セールスプロモーション事業</a></li>
+                            <li><a href="service.html#outsourcing">アウトソーシング事業</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block04 listcol">
+                <dl>
+                    <dt><a href="recruit.html">採用情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="recruit.html">募集職種</a></li>
+                            <li><a href="interview.html">社員インタビュー</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </nav>
+        <div class="footer__company-info">
+            <h3>合同会社SHARE</h3>
+            <p>〒110-0015 東京都台東区東上野６丁目２３−５ 第二雨宮ビル1002</p>
+            <p>TEL: 048-961-8663 | 代表携帯: 090-6684-7792 / 090-1828-5970</p>
+            <p>Email: info@share-llc.jp</p>
+        </div>
+        <div class="footer__links">
+            <a href="contact.html">お問い合わせ</a>
+            <span>|</span>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+    </div>
+    <div class="footer__logo">
+        <h2 style="font-size: 20vw; font-weight: 900; color: #333; letter-spacing: 0.05em; padding: 15px 0; margin: 0; width: 100%; text-align: center;">SHARE</h2>
+    </div>
+    <div class="copy">Copyright© 合同会社SHARE All Rights Reserved.</div>
+</footer>
+
+<script src="./js/header-subpages.js"></script>
+<script>
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+<script src="./js/hero-3d-background.js"></script>
+
+</body>
+</html>

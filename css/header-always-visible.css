@@ -1,0 +1,328 @@
+/* Header always visible styles */
+/* This file ensures header remains functional and visible */
+/* Applied to ALL pages */
+
+/* Hide address on desktop header */
+.commonHeader .header-address {
+    display: none !important;
+}
+
+/* Dropdown menu styles */
+.commonHeader .header-nav .parent {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.commonHeader .header-nav .parent > span {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    cursor: pointer !important;
+    padding: 10px 15px !important;
+}
+
+.commonHeader .header-nav .child {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: white !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease !important;
+    min-width: 250px !important;
+    z-index: 10001 !important;
+    border-radius: 4px !important;
+    margin-top: 5px !important;
+    pointer-events: none !important;
+}
+
+.commonHeader .header-nav .parent:hover .child,
+.commonHeader .header-nav .parent.open .child {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+.commonHeader .header-nav .child dt {
+    padding: 15px 20px !important;
+    border-bottom: 2px solid #e5e5e5 !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+.commonHeader .header-nav .child dt a {
+    color: #333 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+}
+
+.commonHeader .header-nav .child dd {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.commonHeader .header-nav .child ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.commonHeader .header-nav .child li {
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.commonHeader .header-nav .child li:last-child {
+    border-bottom: none !important;
+}
+
+.commonHeader .header-nav .child a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 20px !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    font-size: 14px !important;
+}
+
+.commonHeader .header-nav .child a:hover {
+    background: #f8f8f8 !important;
+    padding-left: 25px !important;
+}
+
+.commonHeader .header-nav .child a i {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.commonHeader .header-nav .child a:hover i {
+    opacity: 1 !important;
+}
+
+/* Mobile hamburger menu - Modern fullscreen design */
+@media (max-width: 768px) {
+    /* Show address in mobile menu */
+    .commonHeader .header-address {
+        display: flex !important;
+    }
+
+    .commonHeader .header-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: #252525 !important;
+        padding: 100px 40px 40px !important;
+        overflow-y: auto !important;
+        z-index: 9998 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.4s ease, visibility 0.4s ease !important;
+    }
+
+    .commonHeader .header-nav.show {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .commonHeader .header-nav > a {
+        padding: 20px 0 !important;
+        display: block !important;
+        color: #ffffff !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.05em !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        position: relative !important;
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease !important;
+    }
+
+    .commonHeader .header-nav.show > a {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .commonHeader .header-nav.show > a:nth-child(1) { transition-delay: 0.1s !important; }
+    .commonHeader .header-nav.show > a:nth-child(2) { transition-delay: 0.15s !important; }
+    .commonHeader .header-nav.show > a:nth-child(3) { transition-delay: 0.2s !important; }
+    .commonHeader .header-nav.show > a:nth-child(4) { transition-delay: 0.25s !important; }
+    .commonHeader .header-nav.show > a:nth-child(5) { transition-delay: 0.3s !important; }
+    .commonHeader .header-nav.show > a:nth-child(6) { transition-delay: 0.35s !important; }
+
+    .commonHeader .header-nav > a::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -1px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        transition: width 0.3s ease !important;
+    }
+
+    .commonHeader .header-nav > a:hover {
+        color: #ffffff !important;
+    }
+
+    .commonHeader .header-nav > a:hover::after {
+        width: 60px !important;
+    }
+
+    .commonHeader .header-nav .btn-header {
+        margin-top: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 20px 40px !important;
+        border: 2px solid #ffffff !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.1em !important;
+        transition: background 0.3s ease, color 0.3s ease !important;
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+        text-decoration: none !important;
+    }
+
+    .commonHeader .header-nav .btn-header span {
+        color: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        letter-spacing: inherit !important;
+    }
+
+    .commonHeader .header-nav.show .btn-header {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0.4s !important;
+    }
+
+    .commonHeader .header-nav .btn-header:hover {
+        background: #ffffff !important;
+        color: #252525 !important;
+        text-decoration: none !important;
+    }
+
+    .commonHeader .header-nav .btn-header:hover span {
+        color: #252525 !important;
+    }
+
+    .commonHeader .header-nav .parent {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .commonHeader .header-nav.show .parent {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .commonHeader .header-nav .parent > span {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 20px 0 !important;
+        color: #ffffff !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.05em !important;
+    }
+
+    .commonHeader .header-nav .child {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        margin-top: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.4s ease !important;
+        pointer-events: auto !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .commonHeader .header-nav .parent.open .child {
+        max-height: 500px !important;
+        padding: 10px 0 !important;
+    }
+
+    .commonHeader .header-nav .child dt {
+        display: none !important;
+    }
+
+    .commonHeader .header-nav .child a {
+        padding: 12px 20px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        transition: color 0.3s ease, padding-left 0.3s ease !important;
+    }
+
+    .commonHeader .header-nav .child a:hover {
+        color: #ffffff !important;
+        padding-left: 30px !important;
+    }
+
+    body.nav-open {
+        overflow: hidden !important;
+    }
+
+    /* Address section in menu */
+    .commonHeader .header-address {
+        margin-top: 60px !important;
+        padding-top: 40px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+
+    .commonHeader .header-nav.show .header-address {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition-delay: 0.5s !important;
+    }
+
+    .commonHeader .header-address .address-line {
+        color: #ffffff !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.8 !important;
+        margin: 0 !important;
+        font-family: 'Courier New', Courier, monospace !important;
+        opacity: 0.85 !important;
+    }
+
+    .commonHeader .header-address .address-line:first-child {
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        margin-bottom: 8px !important;
+        opacity: 1 !important;
+    }
+
+    /* Close button animation */
+    .navToggle.active span {
+        background: #ffffff !important;
+    }
+}

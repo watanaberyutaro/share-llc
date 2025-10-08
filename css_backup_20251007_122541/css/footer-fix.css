@@ -1,0 +1,28 @@
+/* Footer余白削除 */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.commonFooter {
+    margin: 0 !important;
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
+}
+
+footer {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.copy {
+    margin-bottom: 0 !important;
+    padding-bottom: 20px !important;
+}

@@ -1,0 +1,99 @@
+/* Footer Nav Section - Combined */
+.footer__nav {
+    padding: 60px 10% 40px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Footer Navlist */
+.footer-navlist {
+    margin-bottom: 0 !important;
+    padding-bottom: 30px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 40px !important;
+}
+
+.footer-navlist .listcol {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Footer Company Info Section */
+.footer__company-info {
+    padding: 40px 0 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 40px;
+}
+
+.footer__company-info h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer__company-info p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.footer__company-info p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Footer Links Section */
+.footer__links {
+    padding: 20px 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__links a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer__links a:hover {
+    color: #f1d252;
+}
+
+.footer__links span {
+    color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer__company-info {
+        padding: 30px 20px;
+    }
+
+    .footer__company-info h3 {
+        font-size: 20px;
+    }
+
+    .footer__company-info p {
+        font-size: 12px;
+    }
+
+    .footer__links {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer__links span {
+        display: none;
+    }
+}

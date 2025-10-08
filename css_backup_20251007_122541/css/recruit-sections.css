@@ -1,0 +1,505 @@
+/* Recruit Page Sections - Index Page Style */
+
+/* Message Section - Block Style */
+.recruit-message {
+    background: white;
+    display: flex;
+}
+
+.recruit-message .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-message .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-message .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-message h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.recruit-message p {
+    font-size: 16px;
+    color: #636363;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+/* Values Section - Block Style */
+.recruit-values {
+    background: white;
+    display: flex;
+}
+
+.recruit-values .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-values .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-values .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-values h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.value-item {
+    border: 1px solid #e0e0e0;
+    padding: 40px 30px;
+    transition: border-color 0.3s ease;
+}
+
+.value-item:hover {
+    border-color: #252525;
+}
+
+.value-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.value-item p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* Benefits Section - Block Style */
+.recruit-benefits {
+    background: white;
+    display: flex;
+}
+
+.recruit-benefits .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-benefits .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-benefits .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-benefits h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    transition: border-color 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: #252525;
+}
+
+.benefit-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* Positions Section - Block Style */
+.recruit-positions {
+    background: white;
+    display: flex;
+}
+
+.recruit-positions .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-positions .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-positions .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-positions h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.position-card {
+    background: white;
+    border: 1px solid #252525;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.position-header {
+    margin-bottom: 30px;
+}
+
+.position-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.position-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.position-tag {
+    padding: 6px 12px;
+    border: 1px solid #252525;
+    color: #252525;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.position-details {
+    margin-bottom: 0;
+}
+
+.detail-row {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    flex: 0 0 150px;
+    font-weight: 700;
+    color: #252525;
+    font-size: 14px;
+}
+
+.detail-content {
+    flex: 1;
+    color: #636363;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* Process Section - Block Style */
+.recruit-process {
+    background: white;
+    display: flex;
+}
+
+.recruit-process .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-process .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-process .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-process h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+.process-steps {
+    position: relative;
+}
+
+.process-step {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.step-number {
+    flex: 0 0 60px;
+    height: 60px;
+    border: 1px solid #252525;
+    color: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.step-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.step-content p {
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.9;
+}
+
+/* FAQ Section - Block Style */
+.recruit-faq {
+    background: white;
+    display: flex;
+}
+
+.recruit-faq .block-label {
+    width: 100px;
+    padding: 80px 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-right: 1px solid #e5e5e5;
+}
+
+.recruit-faq .block-label label {
+    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.recruit-faq .block-content {
+    flex: 1;
+    padding: 80px 40px 100px 40px;
+}
+
+.recruit-faq h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #252525;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .recruit-message,
+    .recruit-values,
+    .recruit-benefits,
+    .recruit-positions,
+    .recruit-process,
+    .recruit-faq {
+        flex-direction: column;
+    }
+
+    .recruit-message .block-label,
+    .recruit-values .block-label,
+    .recruit-benefits .block-label,
+    .recruit-positions .block-label,
+    .recruit-process .block-label,
+    .recruit-faq .block-label {
+        width: 100%;
+        padding: 20px;
+        writing-mode: horizontal-tb;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .recruit-message .block-label label,
+    .recruit-values .block-label label,
+    .recruit-benefits .block-label label,
+    .recruit-positions .block-label label,
+    .recruit-process .block-label label,
+    .recruit-faq .block-label label {
+        transform: none;
+    }
+
+    .recruit-message .block-content,
+    .recruit-values .block-content,
+    .recruit-benefits .block-content,
+    .recruit-positions .block-content,
+    .recruit-process .block-content,
+    .recruit-faq .block-content {
+        padding: 60px 20px;
+    }
+
+    .recruit-message h2,
+    .recruit-values h2,
+    .recruit-benefits h2,
+    .recruit-positions h2,
+    .recruit-process h2,
+    .recruit-faq h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .position-card {
+        padding: 30px 20px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .detail-label {
+        flex: none;
+    }
+
+    .process-step {
+        gap: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+
+    .step-number {
+        flex: 0 0 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

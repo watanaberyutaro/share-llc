@@ -1,0 +1,225 @@
+/*!
+ * Font Declarations for Life Design Recruit Website
+ * Japanese and Latin font support
+ */
+
+/* ========================================
+   GOOGLE FONTS - NOTO SANS JP
+   ======================================== */
+
+/* Noto Sans JP - Light */
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Noto Sans JP - Regular */
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Noto Sans JP - Bold */
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Japanese characters */
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    src: url('./fonts/notosansjp-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+}
+
+/* ========================================
+   FONT STACK DEFINITIONS
+   ======================================== */
+
+:root {
+    --font-family-main: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-family-heading: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* ========================================
+   BASE TYPOGRAPHY
+   ======================================== */
+
+body {
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 1rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+code, pre {
+    font-family: var(--font-family-monospace);
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4, h5, h6 {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   JAPANESE TEXT OPTIMIZATION
+   ======================================== */
+
+/* Optimize text rendering for Japanese */
+html:lang(ja) {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Japanese punctuation hanging */
+html:lang(ja) p {
+    hanging-punctuation: allow-end;
+}
+
+/* Text spacing for better readability */
+html:lang(ja) body {
+    letter-spacing: 0.02em;
+}
+
+/* Optimize line height for Japanese text */
+html:lang(ja) h1,
+html:lang(ja) h2,
+html:lang(ja) h3,
+html:lang(ja) h4,
+html:lang(ja) h5,
+html:lang(ja) h6 {
+    line-height: 1.4;
+}
+
+html:lang(ja) p {
+    line-height: 1.8;
+}

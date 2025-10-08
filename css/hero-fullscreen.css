@@ -1,0 +1,175 @@
+/* HERO Section Fullscreen Styles */
+
+/* Fullscreen HERO inner container */
+.topMv__inner {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    padding: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Text section - take more space */
+.mv-text {
+    flex: 1 !important;
+    max-width: none !important;
+    width: 50% !important;
+    padding-right: 40px !important;
+}
+
+/* Make title even larger */
+.mv-text h2 {
+    font-size: clamp(48px, 6vw, 96px) !important;
+    line-height: 1.2 !important;
+}
+
+/* Image section - expand to fill */
+.mv-image {
+    flex: 1 !important;
+    width: 50% !important;
+    height: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Image animation container */
+.image-animation {
+    width: 100% !important;
+    height: 80% !important;
+    max-height: 600px !important;
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+/* Individual image items */
+.image-animation li {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Reset absolute positioning */
+.image-animation .img01,
+.image-animation .img02,
+.image-animation .img03,
+.image-animation .img04 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+}
+
+/* Make images cover their containers */
+.img-before img,
+.img-after img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Image hover effects */
+.image-animation li {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.image-animation li:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+    z-index: 10 !important;
+}
+
+/* Navigation buttons */
+.mv-nav {
+    display: flex !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+    margin-top: 40px !important;
+}
+
+.mv-nav .btn-base {
+    padding: 15px 35px !important;
+    font-size: 16px !important;
+}
+
+/* Tablet/Medium screens */
+@media (max-width: 1200px) {
+    .topMv__inner {
+        padding: 30px !important;
+    }
+
+    .mv-text h2 {
+        font-size: clamp(40px, 5vw, 72px) !important;
+    }
+
+    .image-animation {
+        gap: 15px !important;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .topMv__inner {
+        flex-direction: column !important;
+        padding: 20px !important;
+        justify-content: center !important;
+    }
+
+    .mv-text {
+        width: 100% !important;
+        padding-right: 0 !important;
+        text-align: center !important;
+    }
+
+    .mv-text h2 {
+        font-size: clamp(32px, 8vw, 48px) !important;
+    }
+
+    .mv-image {
+        width: 100% !important;
+        height: 50% !important;
+        margin-top: 30px !important;
+    }
+
+    .image-animation {
+        height: 100% !important;
+        max-height: 400px !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+
+    .mv-nav {
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+
+    .mv-nav .btn-base {
+        padding: 12px 25px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .mv-text h2 {
+        font-size: 28px !important;
+    }
+
+    .image-animation {
+        max-height: 300px !important;
+    }
+}

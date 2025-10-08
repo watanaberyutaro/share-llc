@@ -1,0 +1,218 @@
+/* News Ticker Styles */
+
+/* Make HERO + Ticker fill viewport */
+.topMv {
+    height: calc(100vh - 80px - 70px) !important; /* Viewport - header - ticker */
+    min-height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* News Ticker Container */
+.news-ticker {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+/* NEWS Label */
+.ticker-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 30px;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ticker Content Area */
+.ticker-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-left: 120px; /* Space for label */
+}
+
+/* Scrolling Container */
+.ticker-scroll {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    animation: scroll-left 60s linear infinite;
+}
+
+/* Individual News Items */
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 60px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 60px;
+    gap: 20px;
+}
+
+/* Date styling */
+.ticker-date {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 20px;
+}
+
+.ticker-date::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Text styling */
+.ticker-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0) translateY(-50%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+/* Hover Effect - Pause on Hover */
+.ticker-content:hover .ticker-scroll {
+    animation-play-state: paused;
+}
+
+/* Category Labels Styling */
+.ticker-item::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    margin-right: 15px;
+    vertical-align: middle;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Gradient Fade Edges */
+.ticker-content::before,
+.ticker-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ticker-content::before {
+    left: 120px;
+    background: linear-gradient(to right, #1a1a1a, transparent);
+}
+
+.ticker-content::after {
+    right: 0;
+    background: linear-gradient(to left, #1a1a1a, transparent);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .topMv {
+        height: calc(100vh - 60px - 60px) !important; /* Adjusted for mobile */
+    }
+
+    .news-ticker {
+        height: 60px;
+    }
+
+    .ticker-label {
+        padding: 0 20px;
+        font-size: 12px;
+    }
+
+    .ticker-content {
+        padding-left: 80px;
+    }
+
+    .ticker-item {
+        padding: 0 30px;
+        gap: 15px;
+    }
+
+    .ticker-date {
+        font-size: 12px;
+        padding-right: 15px;
+    }
+
+    .ticker-text {
+        font-size: 14px;
+    }
+
+    .ticker-content::before {
+        left: 80px;
+        width: 30px;
+    }
+
+    .ticker-scroll {
+        animation-duration: 50s; /* Adjusted for longer content */
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .news-ticker {
+        border-top: 2px solid #fff;
+    }
+
+    .ticker-label {
+        border-right: 2px solid #fff;
+    }
+}

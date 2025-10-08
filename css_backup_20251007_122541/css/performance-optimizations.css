@@ -1,0 +1,110 @@
+/* Performance Optimizations */
+
+/* Reduce animation complexity */
+.image-animation li {
+    transition: none !important; /* Remove hover transitions */
+}
+
+.image-animation li:hover {
+    transform: none !important; /* Remove hover scaling */
+}
+
+/* Simplify fade animations */
+.mv-text-center h2,
+.mv-text-center .mv-nav {
+    animation: none !important; /* Remove fade-in animations */
+}
+
+/* Optimize news ticker */
+.ticker-scroll {
+    animation-duration: 80s !important; /* Slower for less CPU usage */
+    will-change: auto !important; /* Remove will-change for better memory */
+}
+
+.ticker-content:hover .ticker-scroll {
+    animation-play-state: running !important; /* Keep running on hover */
+}
+
+/* Remove pulse animation on news ticker */
+.ticker-item::before {
+    animation: none !important;
+    opacity: 1 !important;
+}
+
+/* Optimize shadows and effects */
+.commonHeader {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important; /* Lighter shadow */
+}
+
+.btn-base:hover {
+    transform: translateY(-2px) !important; /* Smaller transform */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important; /* Lighter shadow */
+}
+
+/* Use transform3d for hardware acceleration on sticky header */
+.commonHeader.is-sticky {
+    transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+}
+
+/* Optimize images */
+img {
+    will-change: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+}
+
+/* Reduce repaints on scroll */
+.topMv,
+.topAbout,
+.topNews,
+.topBusiness,
+.topInterview,
+.topContact {
+    will-change: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* Simplify background particles */
+#particles {
+    display: none !important; /* Remove if not being used */
+}
+
+/* Optimize font rendering */
+body {
+    text-rendering: optimizeSpeed !important;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+/* Media query for mobile performance */
+@media (max-width: 768px) {
+    /* Disable complex animations on mobile */
+    * {
+        animation-duration: 0s !important;
+        transition-duration: 0.1s !important;
+    }
+
+    /* Simplify hover states on mobile */
+    .btn-base:hover,
+    .image-animation li:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Reduce ticker speed on mobile */
+    .ticker-scroll {
+        animation-duration: 120s !important;
+    }
+}
+
+/* Prefers reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

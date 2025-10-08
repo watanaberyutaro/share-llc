@@ -1,0 +1,401 @@
+/* Index Page Interview Section - Simple & Clean Design */
+
+.topInterview {
+    background: white !important;
+    position: relative;
+}
+
+.topInterview__inner {
+    position: relative;
+}
+
+/* Interview Title */
+.interview-message h2 {
+    font-size: 5rem !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 60px !important;
+}
+
+.interview-message h2 a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    text-decoration: none !important;
+    color: #252525 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.interview-message h2 a:hover {
+    opacity: 0.7 !important;
+}
+
+/* Circle Arrow Button */
+.interview-message .btn-arrows {
+    width: 78px !important;
+    height: 78px !important;
+    max-width: 78px !important;
+    max-height: 78px !important;
+}
+
+.interview-message .btn-arrows .cls-1 {
+    fill: none !important;
+    stroke: #252525 !important;
+    stroke-miterlimit: 10 !important;
+}
+
+.interview-message .btn-arrows .cls-2 {
+    fill: #252525 !important;
+}
+
+/* Interview Slider Wrapper */
+.interview-slider-wrapper {
+    position: relative !important;
+}
+
+/* Interview Scroll Container */
+.interview-scroll {
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Slider Navigation Buttons */
+.index-slider-nav {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    margin-top: 40px !important;
+}
+
+.index-slider-btn {
+    width: 60px !important;
+    height: 60px !important;
+    border: 1px solid #252525 !important;
+    background: white !important;
+    color: #252525 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    font-size: 18px !important;
+}
+
+.index-slider-btn:hover {
+    background: #252525 !important;
+    color: white !important;
+}
+
+.index-slider-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* Interview Cards Layout - Simple Grid */
+.interview-col {
+    display: flex !important;
+    gap: 30px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    min-width: min-content !important;
+}
+
+.interview-col .col {
+    flex: 0 0 380px !important;
+    background: white !important;
+    border: 1px solid #e0e0e0 !important;
+    overflow: hidden !important;
+    transition: border-color 0.3s ease !important;
+    text-decoration: none !important;
+    display: block !important;
+    color: inherit !important;
+}
+
+.interview-col .col:hover {
+    border-color: #252525 !important;
+}
+
+/* Interview Staff Section */
+.col-staff {
+    position: relative !important;
+    height: 420px !important;
+    overflow: hidden !important;
+    background: #f8f8f8 !important;
+}
+
+.staff-portrait {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.staff-portrait img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.col-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    opacity: 0.3 !important;
+}
+
+.col-bg .bg-thumb01 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: blur(10px) !important;
+}
+
+/* Interview Text Content */
+.col-text {
+    padding: 30px !important;
+    border-top: 1px solid #e0e0e0 !important;
+    min-height: 320px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.col-text h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+    display: block !important;
+}
+
+.text-labels {
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 12px !important;
+}
+
+.text-labels .label {
+    display: inline-block !important;
+    padding: 4px 10px !important;
+    background: #f0f0f0 !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #636363 !important;
+}
+
+.text-excerpt {
+    font-size: 14px !important;
+    color: #636363 !important;
+    line-height: 1.65 !important;
+    margin-bottom: 12px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.text-position {
+    margin-bottom: 12px !important;
+}
+
+.text-position .role {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    border: 1px solid #252525 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+}
+
+.text-name {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-top: 15px !important;
+    border-top: 1px solid #e0e0e0 !important;
+    margin-top: auto !important;
+}
+
+.text-name .name {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+}
+
+.text-name .submit {
+    font-size: 13px !important;
+    color: #636363 !important;
+}
+
+/* Override SVG styles */
+.interview-message svg {
+    max-width: none !important;
+    max-height: none !important;
+    width: 78px !important;
+    height: 78px !important;
+    margin-left: 0 !important;
+    vertical-align: initial !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .interview-message h2 {
+        font-size: 32px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .interview-message .btn-arrows {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .interview-message svg {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .interview-col .col {
+        flex: 0 0 320px !important;
+    }
+
+    .col-staff {
+        height: 360px !important;
+    }
+
+    .col-text {
+        padding: 20px !important;
+        min-height: 280px !important;
+    }
+
+    .col-text h3 {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .text-labels {
+        margin-bottom: 10px !important;
+    }
+
+    .text-labels .label {
+        font-size: 10px !important;
+    }
+
+    .text-excerpt {
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .text-name .name {
+        font-size: 16px !important;
+    }
+
+    .text-name .submit {
+        font-size: 12px !important;
+    }
+
+    .index-slider-nav {
+        margin-top: 30px !important;
+    }
+
+    .index-slider-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 769px) {
+    .topInterview {
+        display: flex;
+    }
+
+    .topInterview .block-content {
+        padding: 80px 40px 100px 40px;
+        flex: 1;
+        border-left: 1px solid #e5e5e5;
+    }
+
+    .topInterview .block-label {
+        width: 100px !important;
+        padding: 80px 20px !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    .topInterview .block-label label {
+        transform: rotate(180deg);
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        color: #999 !important;
+        text-transform: uppercase;
+    }
+}
+
+/* ============================================
+   RECRUIT PAGE SPECIFIC STYLES - SLIDER
+   ============================================ */
+
+/* Slider Navigation Buttons */
+.recruit-slider-nav {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    margin-top: 40px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.recruit-slider-btn {
+    width: 60px !important;
+    height: 60px !important;
+    border: 1px solid #252525 !important;
+    background: white !important;
+    color: #252525 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    font-size: 18px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.recruit-slider-btn:hover {
+    background: #252525 !important;
+    color: white !important;
+}
+
+.recruit-slider-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .recruit-slider-nav {
+        margin-top: 30px !important;
+    }
+
+    .recruit-slider-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 16px !important;
+    }
+}

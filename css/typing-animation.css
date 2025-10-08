@@ -1,0 +1,39 @@
+/* Typing Animation for Hero Title */
+
+/* Blinking cursor */
+.typing-cursor {
+    display: inline;
+    width: 2px;
+    height: 0.9em;
+    background: #333333;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    position: relative;
+    top: -2px;
+}
+
+.typing-cursor::before {
+    content: '|';
+    color: #333333;
+    font-weight: 900;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Hide cursor after animation completes */
+.typing-complete .typing-cursor {
+    animation: none;
+    opacity: 0;
+}
+
+/* Typing line */
+.hero-title-typing .typing-line {
+    display: inline;
+}

@@ -1,0 +1,151 @@
+/* HERO Bottom-Right Navigation Styles */
+
+/* Keep container relative for absolute positioning */
+.topMv__inner {
+    position: relative !important;
+}
+
+/* Bottom-right navigation - positioned absolutely */
+.hero-nav-bottom-right {
+    position: absolute !important;
+    bottom: 60px !important;
+    right: 60px !important;
+    width: 50% !important;
+    max-width: 600px !important;
+    display: flex !important;
+    gap: 40px !important;
+    z-index: 10 !important;
+}
+
+/* Navigation groups */
+.hero-nav-bottom-right .nav-group {
+    flex: 1 !important;
+}
+
+.hero-nav-bottom-right .nav-group h3 {
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.1em !important;
+    color: #333333 !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #333333 !important;
+}
+
+.hero-nav-bottom-right .nav-group a {
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #333333 !important;
+    text-decoration: none !important;
+    padding: 8px 0 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+.hero-nav-bottom-right .nav-group a:hover {
+    color: #666666 !important;
+    padding-left: 10px !important;
+}
+
+.hero-nav-bottom-right .nav-group a::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 0 !important;
+    height: 1px !important;
+    background: #333333 !important;
+    transition: width 0.3s ease !important;
+}
+
+.hero-nav-bottom-right .nav-group a:hover::before {
+    width: 5px !important;
+}
+
+/* Contact button special styling */
+.hero-nav-bottom-right .nav-contact-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    background: #333333 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 25px !important;
+    margin-top: 10px !important;
+    font-weight: 700 !important;
+}
+
+.hero-nav-bottom-right .nav-contact-btn:hover {
+    background: #000000 !important;
+    padding-left: 24px !important;
+}
+
+.hero-nav-bottom-right .nav-contact-btn i {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-left: 10px !important;
+}
+
+.hero-nav-bottom-right .nav-contact-btn svg {
+    width: 13px !important;
+    height: 11px !important;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1200px) {
+    .hero-nav-bottom-right {
+        bottom: 40px !important;
+        right: 40px !important;
+        width: 55% !important;
+        gap: 30px !important;
+    }
+
+    .hero-nav-bottom-right .nav-group h3 {
+        font-size: 11px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-nav-bottom-right .nav-group a {
+        font-size: 13px !important;
+        padding: 6px 0 !important;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-nav-bottom-right {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 20px !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .hero-nav-bottom-right .nav-group {
+        border-left: 3px solid #333333 !important;
+        padding-left: 20px !important;
+    }
+
+    .hero-nav-bottom-right .nav-group h3 {
+        border-bottom: none !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero-nav-bottom-right .nav-group a {
+        font-size: 14px !important;
+    }
+
+    .hero-nav-bottom-right .nav-contact-btn {
+        width: fit-content !important;
+    }
+}
+
+/* Hide duplicate nav items that may conflict */
+.mv-nav {
+    display: none !important;
+}

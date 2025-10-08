@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <title>お知らせ詳細 | 合同会社SHARE</title>
+    <link href="./assets/img/icons/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="./assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style-complete.css">
+    <link rel="stylesheet" href="./css/header-sticky.css">
+    <link rel="stylesheet" href="./css/header-always-visible.css">
+
+    <!-- Footer Fix -->
+    <link rel="stylesheet" href="./css/footer-fix.css">
+    <link rel="stylesheet" href="./css/footer-custom.css">
+
+    <style>
+        /* お知らせ詳細ページのスタイル */
+        .news-detail-page {
+            background: white;
+            min-height: 100vh;
+        }
+
+        .news-detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .news-detail-header {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .news-detail-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .news-detail-date {
+            font-size: 0.875rem;
+            color: #636363;
+            font-weight: 500;
+        }
+
+        .news-detail-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid #252525;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #252525;
+        }
+
+        .news-detail-badge {
+            background: #ff952c;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .news-detail-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #333333;
+            line-height: 1.4;
+        }
+
+        .news-detail-image {
+            margin: 2rem 0;
+        }
+
+        .news-detail-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+        }
+
+        .news-detail-content {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #252525;
+            white-space: pre-wrap;
+        }
+
+        .news-detail-back {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #252525;
+            background: white;
+            color: #252525;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #252525;
+            color: white;
+            text-decoration: none;
+        }
+
+        .news-loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #636363;
+        }
+
+        .news-error {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #ff3d80;
+        }
+
+        @media (max-width: 640px) {
+            .news-detail-container {
+                padding: 5rem 1.25rem 3rem;
+            }
+
+            .news-detail-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/header-subpages.css">
+</head>
+<body class="page-subpage">
+
+<main class="news-detail-page">
+    <!-- Header moved here -->
+    <header class="commonHeader">
+        <div class="commonHeader__inner">
+            <h1 class="header-ttl">
+                <a href="index.html"><span style="font-size: 28px; font-weight: 900; color: #333333; letter-spacing: 0.05em;">SHARE</span></a>
+            </h1>
+            <nav class="header-nav">
+                <a href="index.html">HOME</a>
+                <a href="company.html">COMPANY</a>
+                <a href="service.html">SERVICES</a>
+                <a href="interview.html">INTERVIEW</a>
+                <a href="news.html">NEWS</a>
+                <a href="recruit.html">RECRUIT</a>
+                <a href="contact.html" class="btn-header"><span>CONTACT</span></a>
+            </nav>
+            <nav class="header-nav-sp">
+                <a href="index.html#contact" class="btn-base is-black"><span>お問い合わせ</span></a>
+            </nav>
+            <button class="navToggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="newsDetailContent" class="news-detail-container">
+        <p class="news-loading">読み込み中...</p>
+    </div>
+</main>
+
+<footer class="commonFooter">
+    <div class="footer__cta">
+        <h2>幸せと価値を<br class="only-sp">世界にシェアしませんか？</h2>
+        <nav class="cta-main">
+            <a href="service.html">事業内容</a>
+            <a href="contact.html">お問い合わせ</a>
+        </nav>
+        <nav class="cta-sub">
+            <a href="company.html">会社概要<i><svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none"><path d="M7.35458 5.67874e-05L12.3077 5.38467L7.35458 10.7693L6.19886 9.468L9.12944 6.28211L-1.48665e-05 6.28211L-1.47096e-05 4.48724L9.12944 4.48724L6.19886 1.30134L7.35458 5.67874e-05Z" fill="white"></path></svg></i></a>
+            <a href="company.html#message">代表挨拶<i><svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none"><path d="M7.35458 5.67874e-05L12.3077 5.38467L7.35458 10.7693L6.19886 9.468L9.12944 6.28211L-1.48665e-05 6.28211L-1.47096e-05 4.48724L9.12944 4.48724L6.19886 1.30134L7.35458 5.67874e-05Z" fill="white"></path></svg></i></a>
+            <a href="recruit.html">採用情報<i><svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none"><path d="M7.35458 5.67874e-05L12.3077 5.38467L7.35458 10.7693L6.19886 9.468L9.12944 6.28211L-1.48665e-05 6.28211L-1.47096e-05 4.48724L9.12944 4.48724L6.19886 1.30134L7.35458 5.67874e-05Z" fill="white"></path></svg></i></a>
+        </nav>
+    </div>
+    <div class="footer__nav">
+        <nav class="footer-navlist">
+            <div class="list-block01 is-first listcol">
+                <ul>
+                    <li><a href="index.html" class="is-parent">ホーム</a></li>
+                </ul>
+            </div>
+            <div class="list-block02 is-2nd listcol">
+                <dl>
+                    <dt><a href="company.html">会社情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="company.html">会社概要</a></li>
+                            <li><a href="company.html#message">代表挨拶</a></li>
+                            <li><a href="company.html">企業理念</a></li>
+                            <li><a href="company.html">沿革</a></li>
+                            <li><a href="company.html">アクセス</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block03 listcol">
+                <dl>
+                    <dt><a href="service.html">事業内容</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="service.html#sv">SV事業</a></li>
+                            <li><a href="service.html#ses">SES事業</a></li>
+                            <li><a href="service.html#promotion">セールスプロモーション事業</a></li>
+                            <li><a href="service.html#outsourcing">アウトソーシング事業</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block04 listcol">
+                <dl>
+                    <dt><a href="interview.html">INTERVIEW</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="interview.html">社員インタビュー</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="list-block05 listcol">
+                <dl>
+                    <dt><a href="recruit.html">採用情報</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="recruit.html">募集職種</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </nav>
+        <div class="footer__company-info">
+            <h3>合同会社SHARE</h3>
+            <p>〒110-0015 東京都台東区東上野６丁目２３−５ 第二雨宮ビル1002</p>
+            <p>TEL: 048-961-8663 | 代表携帯: 090-6684-7792 / 090-1828-5970</p>
+            <p>Email: info@share-llc.jp</p>
+        </div>
+        <div class="footer__links">
+            <a href="contact.html">お問い合わせ</a>
+            <span>|</span>
+            <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+    </div>
+    <div class="footer__logo">
+        <h2 style="font-size: 20vw; font-weight: 900; color: #333; letter-spacing: 0.05em; padding: 15px 0; margin: 0; width: 100%; text-align: center;">SHARE</h2>
+    </div>
+    <div class="copy">Copyright© 合同会社SHARE All Rights Reserved.</div>
+</footer>
+
+<script src="./js/header-sticky.js"></script>
+<script>
+// URL パラメータから記事IDを取得
+const urlParams = new URLSearchParams(window.location.search);
+const newsId = parseInt(urlParams.get('id'));
+
+if (!newsId) {
+    document.getElementById('newsDetailContent').innerHTML = '<p class="news-error">記事が見つかりませんでした</p>';
+} else {
+    // ニュースデータを読み込む
+    fetch('./data/news.json')
+        .then(response => response.json())
+        .then(data => {
+            const article = data.articles.find(a => a.id === newsId);
+
+            if (article) {
+                displayNewsDetail(article);
+            } else {
+                document.getElementById('newsDetailContent').innerHTML = '<p class="news-error">記事が見つかりませんでした</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error loading news:', error);
+            document.getElementById('newsDetailContent').innerHTML = '<p class="news-error">記事の読み込みに失敗しました</p>';
+        });
+}
+
+function displayNewsDetail(article) {
+    const newBadge = article.isNew ? '<span class="news-detail-badge">NEW</span>' : '';
+    const imageHTML = article.image ?
+        `<div class="news-detail-image"><img src="${article.image}" alt="${article.title}"></div>` : '';
+
+    const html = `
+        <div class="news-detail-header">
+            <div class="news-detail-meta">
+                <span class="news-detail-date">${article.date}</span>
+                <span class="news-detail-category">${article.category}</span>
+                ${newBadge}
+            </div>
+            <h1 class="news-detail-title">${article.title}</h1>
+        </div>
+        ${imageHTML}
+        <div class="news-detail-content">${article.content}</div>
+        <div class="news-detail-back">
+            <a href="news.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> 一覧に戻る
+            </a>
+        </div>
+    `;
+
+    document.getElementById('newsDetailContent').innerHTML = html;
+    document.title = article.title + ' | 合同会社SHARE';
+}
+
+</script>
+
+<script src="./js/header-subpages.js"></script>
+<script src="./js/news-detail-loader.js"></script>
+
+</body>
+</html>
