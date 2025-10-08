@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理者ログイン | 合同会社SHARE</title>
+<style>
+:root {
+  --color-primary: #263238;
+  --color-secondary: #37474F;
+  --color-accent: #F9A825;
+  --color-accent-light: #FFB300;
+  --color-error: #EF5350;
+  --color-success: #66BB6A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
+}
+
+.login-header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.login-header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.login-form {
+  padding: 40px 30px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(249, 168, 37, 0.1);
+}
+
+.error-message {
+  display: none;
+  background: rgba(239, 83, 80, 0.1);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.error-message.show {
+  display: block;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 168, 37, 0.3);
+}
+
+.login-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.back-link a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: var(--color-accent);
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.loading.show {
+  display: block;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--color-accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+  display: none;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.admin-header {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-title {
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.logout-btn {
+  padding: 10px 24px;
+  background: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #E53935;
+  transform: translateY(-2px);
+}
+
+.admin-content {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-full {
+  grid-column: span 2;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-input-label {
+  display: block;
+  padding: 12px 16px;
+  background: #F5F5F5;
+  border: 2px dashed #E0E0E0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+  background: #EEEEEE;
+  border-color: var(--color-accent);
+}
+
+.file-input {
+  position: absolute;
+  left: -9999px;
+}
+
+.image-preview {
+  margin-top: 12px;
+  max-width: 100%;
+  border-radius: 8px;
+  display: none;
+}
+
+.image-preview.show {
+  display: block;
+}
+
+.news-list {
+  margin-top: 48px;
+}
+
+.news-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #E0E0E0;
+}
+
+.news-list-title {
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+.news-item {
+  background: #F9F9F9;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.news-item:hover {
+  background: #F5F5F5;
+  transform: translateX(4px);
+}
+
+.news-item-content {
+  flex: 1;
+}
+
+.news-item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.news-item-meta {
+  font-size: 13px;
+  color: #666;
+}
+
+.news-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: var(--color-accent);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: var(--color-accent-light);
+}
+
+.delete-btn {
+  background: var(--color-error);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #E53935;
+}
+
+.success-message {
+  display: none;
+  background: rgba(102, 187, 106, 0.1);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.success-message.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-full {
+    grid-column: span 1;
+  }
+  
+  .admin-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="login-container" id="loginContainer">
+  <div class="login-header">
+    <h1>管理者ログイン</h1>
+    <p>お知らせ管理システム</p>
+  </div>
+  
+  <form class="login-form" id="loginForm">
+    <div class="error-message" id="errorMessage">
+      パスワードが正しくありません
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="password">パスワード</label>
+      <input type="password" id="password" class="form-input" placeholder="パスワードを入力" required>
+    </div>
+    
+    <button type="submit" class="login-button">ログイン</button>
+    
+    <div class="back-link">
+      <a href="index.html">← トップページに戻る</a>
+    </div>
+  </form>
+</div>
+
+<div class="admin-dashboard" id="adminDashboard">
+  <div class="admin-header">
+    <h1 class="admin-title">お知らせ管理</h1>
+    <button class="logout-btn" onclick="logout()">ログアウト</button>
+  </div>
+  
+  <div class="admin-content">
+    <div class="news-form">
+      <h2 style="margin-bottom: 24px; color: var(--color-primary);">新規お知らせ作成</h2>
+      
+      <div class="success-message" id="successMessage">
+        お知らせを投稿しました
+      </div>
+      
+      <form id="newsForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">タイトル *</label>
+            <input type="text" id="newsTitle" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">カテゴリー *</label>
+            <select id="newsCategory" class="form-input" required>
+              <option value="">選択してください</option>
+              <option value="press">プレスリリース</option>
+              <option value="service">サービス情報</option>
+              <option value="event">イベント</option>
+              <option value="company">会社情報</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group form-full">
+          <label class="form-label">要約 *</label>
+          <input type="text" id="newsExcerpt" class="form-input" placeholder="記事の要約を入力（100文字程度）" required>
+        </div>
+        
+        <div class="form-group form-full">
+          <label class="form-label">本文 *</label>
+          <textarea id="newsContent" class="form-input form-textarea" placeholder="お知らせの本文を入力" required></textarea>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">タグ（カンマ区切り）</label>
+            <input type="text" id="newsTags" class="form-input" placeholder="例: 新サービス,キャンペーン">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">公開日</label>
+            <input type="date" id="newsDate" class="form-input">
+          </div>
+        </div>
+        
+        <div class="form-group form-full">
+          <label class="form-label">画像</label>
+          <div class="file-input-wrapper">
+            <label for="newsImage" class="file-input-label">
+              画像を選択（推奨: 1200×630px）
+            </label>
+            <input type="file" id="newsImage" class="file-input" accept="image/*" onchange="previewImage(event)">
+            <img id="imagePreview" class="image-preview" alt="プレビュー">
+          </div>
+        </div>
+        
+        <button type="submit" class="login-button" style="max-width: 200px;">
+          投稿する
+        </button>
+      </form>
+    </div>
+    
+    <div class="news-list">
+      <div class="news-list-header">
+        <h2 class="news-list-title">投稿済みのお知らせ</h2>
+        <span id="newsCount" style="color: #666; font-size: 14px;">0件</span>
+      </div>
+      
+      <div id="newsList">
+        <!-- News items will be dynamically loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Admin password (in production, this should be handled server-side)
+const ADMIN_PASSWORD = 'share2024admin';
+
+// Check if already logged in
+if (localStorage.getItem('adminLoggedIn') === 'true') {
+  showDashboard();
+}
+
+// Login form submission
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const password = document.getElementById('password').value;
+  const errorMessage = document.getElementById('errorMessage');
+  
+  if (password === ADMIN_PASSWORD) {
+    localStorage.setItem('adminLoggedIn', 'true');
+    showDashboard();
+  } else {
+    errorMessage.classList.add('show');
+    setTimeout(() => {
+      errorMessage.classList.remove('show');
+    }, 3000);
+  }
+});
+
+// Show dashboard
+function showDashboard() {
+  document.getElementById('loginContainer').style.display = 'none';
+  document.getElementById('adminDashboard').style.display = 'block';
+  document.body.style.background = '#F5F5F5';
+  loadNewsList();
+}
+
+// Logout
+function logout() {
+  localStorage.removeItem('adminLoggedIn');
+  location.reload();
+}
+
+// Preview image
+function previewImage(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById('imagePreview');
+  
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.src = e.target.result;
+      preview.classList.add('show');
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+// News form submission
+document.getElementById('newsForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const newsData = {
+    id: Date.now(),
+    title: document.getElementById('newsTitle').value,
+    category: document.getElementById('newsCategory').value,
+    excerpt: document.getElementById('newsExcerpt').value,
+    content: document.getElementById('newsContent').value,
+    tags: document.getElementById('newsTags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+    date: document.getElementById('newsDate').value || new Date().toISOString().split('T')[0],
+    image: document.getElementById('imagePreview').src || null
+  };
+  
+  // Get existing news
+  let newsList = JSON.parse(localStorage.getItem('newsList') || '[]');
+  
+  // Add new news
+  newsList.unshift(newsData);
+  
+  // Save to localStorage
+  localStorage.setItem('newsList', JSON.stringify(newsList));
+  
+  // Show success message
+  const successMessage = document.getElementById('successMessage');
+  successMessage.classList.add('show');
+  setTimeout(() => {
+    successMessage.classList.remove('show');
+  }, 3000);
+  
+  // Reset form
+  document.getElementById('newsForm').reset();
+  document.getElementById('imagePreview').classList.remove('show');
+  
+  // Reload news list
+  loadNewsList();
+});
+
+// Load news list
+function loadNewsList() {
+  const newsList = JSON.parse(localStorage.getItem('newsList') || '[]');
+  const newsListElement = document.getElementById('newsList');
+  const newsCount = document.getElementById('newsCount');
+  
+  newsCount.textContent = `${newsList.length}件`;
+  
+  if (newsList.length === 0) {
+    newsListElement.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">まだお知らせはありません</p>';
+    return;
+  }
+  
+  newsListElement.innerHTML = newsList.map(news => `
+    <div class="news-item">
+      <div class="news-item-content">
+        <div class="news-item-title">${news.title}</div>
+        <div class="news-item-meta">
+          ${news.date} | ${getCategoryLabel(news.category)}
+        </div>
+      </div>
+      <div class="news-item-actions">
+        <button class="edit-btn" onclick="editNews(${news.id})">編集</button>
+        <button class="delete-btn" onclick="deleteNews(${news.id})">削除</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Get category label
+function getCategoryLabel(category) {
+  const labels = {
+    'press': 'プレスリリース',
+    'service': 'サービス情報',
+    'event': 'イベント',
+    'company': '会社情報'
+  };
+  return labels[category] || category;
+}
+
+// Delete news
+function deleteNews(id) {
+  if (confirm('このお知らせを削除しますか？')) {
+    let newsList = JSON.parse(localStorage.getItem('newsList') || '[]');
+    newsList = newsList.filter(news => news.id !== id);
+    localStorage.setItem('newsList', JSON.stringify(newsList));
+    loadNewsList();
+  }
+}
+
+// Edit news (placeholder function)
+function editNews(id) {
+  alert('編集機能は準備中です');
+}
+
+// Set today's date as default
+document.getElementById('newsDate').valueAsDate = new Date();
+</script>
+
+</body>
+</html>
