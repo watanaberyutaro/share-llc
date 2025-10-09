@@ -141,6 +141,10 @@
     margin: 0 !important;
     opacity: 0 !important;
     transition: opacity 1s ease !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .business-iamge figure:first-child {
@@ -148,9 +152,12 @@
 }
 
 .business-iamge img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
 }
 
 /* Slick Slider Styles (if using Slick) */
@@ -175,6 +182,10 @@
 .business-iamge .slick-slide figure {
     position: relative !important;
     opacity: 1 !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /* Override SVG styles from other sections */
