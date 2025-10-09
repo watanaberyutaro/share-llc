@@ -108,6 +108,10 @@
     transition: transform 0.3s ease !important;
 }
 
+.nav-block h3 svg path {
+    fill: #252525 !important;
+}
+
 .nav-block h3 a:hover svg {
     transform: translateX(5px) !important;
 }
@@ -277,6 +281,10 @@
         width: 18px !important;
         height: 18px !important;
         flex-shrink: 0 !important;
+    }
+
+    .nav-block h3 svg path {
+        fill: #252525 !important;
     }
 
     .nav-block p {
