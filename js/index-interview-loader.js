@@ -87,11 +87,8 @@
     // スライダー初期化
     function initIndexSlider() {
         const container = document.getElementById('indexInterviewList');
-        const section = container.closest('.recruit-interview-section');
-        if (!section) return;
-
-        const prevBtn = section.querySelector('.recruit-interview-prev');
-        const nextBtn = section.querySelector('.recruit-interview-next');
+        const prevBtn = document.querySelector('.recruit-interview-section .recruit-interview-prev');
+        const nextBtn = document.querySelector('.recruit-interview-section .recruit-interview-next');
 
         if (!container || !prevBtn || !nextBtn) return;
 
@@ -99,25 +96,21 @@
         if (originalCards.length === 0) return;
 
         const totalCards = originalCards.length;
-        let currentIndex = totalCards; // 複製されたカードの最初のセットから開始
+        let currentIndex = totalCards;
         let isTransitioning = false;
 
-        // 無限ループのために、カードを前後に複製
+        // 無限ループのために前後に複製
         const clonedCardsStart = originalCards.map(card => card.cloneNode(true));
         const clonedCardsEnd = originalCards.map(card => card.cloneNode(true));
 
-        // 前に複製を追加
         clonedCardsStart.forEach(card => container.insertBefore(card, container.firstChild));
-        // 後ろに複製を追加
         clonedCardsEnd.forEach(card => container.appendChild(card));
 
-        // カードの幅を取得
         function getCardWidth() {
             const firstCard = container.querySelector('.col');
-            return firstCard ? firstCard.offsetWidth + 30 : 410; // カード幅 + gap
+            return firstCard ? firstCard.offsetWidth + 30 : 410;
         }
 
-        // スライド位置を更新
         function updateSlidePosition(withTransition = true) {
             const cardWidth = getCardWidth();
             if (!withTransition) {
@@ -128,17 +121,14 @@
             container.style.transform = `translate3d(-${currentIndex * cardWidth}px, 0, 0)`;
         }
 
-        // 前へボタン
         prevBtn.addEventListener('click', () => {
             if (isTransitioning) return;
             isTransitioning = true;
-
             currentIndex--;
             updateSlidePosition();
 
             setTimeout(() => {
                 if (currentIndex === 0) {
-                    // 最初の複製セットに到達したら、元のセットの最後にジャンプ
                     currentIndex = totalCards;
                     updateSlidePosition(false);
                 }
@@ -146,17 +136,14 @@
             }, 600);
         });
 
-        // 次へボタン
         nextBtn.addEventListener('click', () => {
             if (isTransitioning) return;
             isTransitioning = true;
-
             currentIndex++;
             updateSlidePosition();
 
             setTimeout(() => {
                 if (currentIndex === totalCards * 2) {
-                    // 最後の複製セットに到達したら、元のセットの最初にジャンプ
                     currentIndex = totalCards;
                     updateSlidePosition(false);
                 }
@@ -164,10 +151,7 @@
             }, 600);
         });
 
-        // リサイズ時に位置を再計算
         window.addEventListener('resize', () => updateSlidePosition(false));
-
-        // 初期位置設定（最初の元のカードセットにセット）
         updateSlidePosition(false);
     }
 
