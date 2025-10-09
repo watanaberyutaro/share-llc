@@ -120,9 +120,9 @@
             if (!withTransition) {
                 container.style.transition = 'none';
             } else {
-                container.style.transition = 'transform 0.5s ease';
+                container.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             }
-            container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            container.style.transform = `translate3d(-${currentIndex * cardWidth}px, 0, 0)`;
         }
 
         // 前へボタン
@@ -140,7 +140,7 @@
                     updateSlidePosition(false);
                 }
                 isTransitioning = false;
-            }, 500);
+            }, 600);
         });
 
         // 次へボタン
@@ -158,7 +158,7 @@
                     updateSlidePosition(false);
                 }
                 isTransitioning = false;
-            }, 500);
+            }, 600);
         });
 
         // リサイズ時に位置を再計算
