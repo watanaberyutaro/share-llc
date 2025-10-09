@@ -1,10 +1,15 @@
 // Admin Manager JavaScript
 
 let currentPassword = '';
+let newsFormInitialized = false;
+let imageUploadInitialized = false;
+let tabsInitialized = false;
 
-// DOMContentLoaded
+// DOMContentLoaded - 全ての初期化を統合
 document.addEventListener('DOMContentLoaded', function() {
     initLogin();
+    initLogout();
+    initTabs();
 });
 
 // ログイン処理
@@ -30,7 +35,7 @@ function initLogin() {
 }
 
 // ログアウト
-document.addEventListener('DOMContentLoaded', function() {
+function initLogout() {
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function() {
@@ -39,9 +44,42 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('loginModal').style.display = 'flex';
             document.getElementById('password').value = '';
             document.getElementById('loginError').style.display = 'none';
+
+            // フラグをリセット
+            newsFormInitialized = false;
+            imageUploadInitialized = false;
         });
     }
-});
+}
+
+// タブ切り替えの初期化
+function initTabs() {
+    if (tabsInitialized) return;
+    tabsInitialized = true;
+
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabName = this.dataset.tab;
+
+            // タブボタンの切り替え
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // タブコンテンツの切り替え
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabName + 'Tab').classList.add('active');
+
+            // インタビュータブが選択されたら初期化
+            if (tabName === 'interview') {
+                initInterviewPanel();
+            }
+        });
+    });
+}
 
 // 管理画面の初期化
 function initAdminPanel() {
@@ -112,6 +150,9 @@ function createNewsItem(article, latestNewsId) {
 
 // フォームの初期化
 function initNewsForm() {
+    if (newsFormInitialized) return;
+    newsFormInitialized = true;
+
     const newsForm = document.getElementById('newsForm');
     const cancelBtn = document.getElementById('cancelBtn');
 
@@ -283,6 +324,9 @@ function deleteNews(id) {
 
 // 画像プレビュー機能
 function initImageUpload() {
+    if (imageUploadInitialized) return;
+    imageUploadInitialized = true;
+
     const imageInput = document.getElementById('imageFile');
     const imagePreview = document.getElementById('imagePreview');
 
@@ -301,32 +345,6 @@ function initImageUpload() {
 // ========================================
 // 社員インタビュー管理機能
 // ========================================
-
-// タブ切り替え
-document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const tabName = this.dataset.tab;
-            
-            // タブボタンの切り替え
-            tabBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            // タブコンテンツの切り替え
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(tabName + 'Tab').classList.add('active');
-            
-            // インタビュータブが選択されたら初期化
-            if (tabName === 'interview') {
-                initInterviewPanel();
-            }
-        });
-    });
-});
 
 // インタビュー管理パネルの初期化
 function initInterviewPanel() {
@@ -351,7 +369,7 @@ function loadInterviewList() {
 // インタビュー一覧を表示
 function displayInterviewList(interviews) {
     const listContainer = document.getElementById('interviewList');
-    
+
     if (interviews.length === 0) {
         listContainer.innerHTML = '<p>インタビューがありません</p>';
         return;
@@ -387,12 +405,17 @@ function initInterviewForm() {
     const form = document.getElementById('interviewForm');
     const cancelBtn = document.getElementById('interviewCancelBtn');
 
-    form.addEventListener('submit', async function(e) {
+    // 既存のリスナーを削除するために、フォームをクローンして置き換える
+    const newForm = form.cloneNode(true);
+    form.parentNode.replaceChild(newForm, form);
+
+    newForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         await saveInterview();
     });
 
-    cancelBtn.addEventListener('click', function() {
+    const newCancelBtn = document.getElementById('interviewCancelBtn');
+    newCancelBtn.addEventListener('click', function() {
         resetInterviewForm();
     });
 }
@@ -550,12 +573,19 @@ function initInterviewImageUpload() {
     const imageInput = document.getElementById('interviewImageFile');
     const imagePreview = document.getElementById('interviewImagePreview');
 
-    imageInput.addEventListener('change', function(e) {
+    // 既存のリスナーを削除
+    const newImageInput = imageInput.cloneNode(true);
+    imageInput.parentNode.replaceChild(newImageInput, imageInput);
+
+    const updatedImageInput = document.getElementById('interviewImageFile');
+    const updatedImagePreview = document.getElementById('interviewImagePreview');
+
+    updatedImageInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                imagePreview.innerHTML = `<img src="${e.target.result}" alt="プレビュー">`;
+                updatedImagePreview.innerHTML = `<img src="${e.target.result}" alt="プレビュー">`;
             };
             reader.readAsDataURL(file);
         }
