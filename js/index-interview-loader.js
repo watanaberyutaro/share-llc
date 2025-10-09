@@ -87,8 +87,11 @@
     // スライダー初期化
     function initIndexSlider() {
         const container = document.getElementById('indexInterviewList');
-        const prevBtn = document.querySelector('.index-slider-prev');
-        const nextBtn = document.querySelector('.index-slider-next');
+        const section = container.closest('.recruit-interview-section');
+        if (!section) return;
+
+        const prevBtn = section.querySelector('.recruit-interview-prev');
+        const nextBtn = section.querySelector('.recruit-interview-next');
 
         if (!container || !prevBtn || !nextBtn) return;
 
