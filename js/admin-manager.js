@@ -546,24 +546,36 @@ async function deleteInterview(id) {
     }
 
     try {
+        console.log('Deleting interview with ID:', id);
+
         const response = await fetch('./api/interview-manager.php?action=delete', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ id: id })
+            body: JSON.stringify({ id: parseInt(id) })
         });
 
-        const result = await response.json();
+        console.log('Response status:', response.status);
+        const responseText = await response.text();
+        console.log('Response text:', responseText);
+
+        let result;
+        try {
+            result = JSON.parse(responseText);
+        } catch (e) {
+            console.error('JSON parse error:', e);
+            throw new Error('サーバーからの応答が不正です: ' + responseText);
+        }
 
         if (result.success) {
             alert('削除しました');
             loadInterviewList();
         } else {
-            throw new Error(result.message);
+            throw new Error(result.message || '削除に失敗しました');
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error deleting interview:', error);
         alert('削除に失敗しました: ' + error.message);
     }
 }

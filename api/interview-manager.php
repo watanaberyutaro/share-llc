@@ -128,27 +128,49 @@ function deleteInterview() {
 
     $interviews = json_decode(file_get_contents($dataFile), true);
 
-    $data = json_decode(file_get_contents('php://input'), true);
-    $id = isset($data['id']) ? intval($data['id']) : 0;
-
-    if ($id === 0) {
-        echo json_encode(['success' => false, 'message' => 'IDが不正です']);
+    if ($interviews === null) {
+        echo json_encode(['success' => false, 'message' => 'JSONファイルの読み込みに失敗しました']);
         return;
     }
 
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    if ($data === null) {
+        echo json_encode(['success' => false, 'message' => 'リクエストデータの解析に失敗しました']);
+        return;
+    }
+
+    $id = isset($data['id']) ? intval($data['id']) : 0;
+
+    if ($id === 0) {
+        echo json_encode(['success' => false, 'message' => 'IDが不正です (受信したID: ' . json_encode($data) . ')']);
+        return;
+    }
+
+    // 削除前の件数
+    $beforeCount = count($interviews);
+
     // IDで検索して削除
     $filteredInterviews = array_filter($interviews, function($interview) use ($id) {
-        return $interview['id'] !== $id;
+        return intval($interview['id']) !== $id;
     });
 
     // 配列のインデックスを振り直す
     $filteredInterviews = array_values($filteredInterviews);
 
+    // 削除後の件数
+    $afterCount = count($filteredInterviews);
+
+    if ($beforeCount === $afterCount) {
+        echo json_encode(['success' => false, 'message' => '指定されたID (' . $id . ') のインタビューが見つかりませんでした']);
+        return;
+    }
+
     // JSONファイルに保存
     if (file_put_contents($dataFile, json_encode($filteredInterviews, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE))) {
         echo json_encode(['success' => true, 'message' => '削除しました', 'data' => $filteredInterviews]);
     } else {
-        echo json_encode(['success' => false, 'message' => '削除に失敗しました']);
+        echo json_encode(['success' => false, 'message' => 'ファイルの書き込みに失敗しました。パーミッションを確認してください。']);
     }
 }
 
